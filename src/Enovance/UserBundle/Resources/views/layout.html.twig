@@ -2,10 +2,14 @@
 
 {% block title %}Portal | Login{% endblock %}
 
+{% block css %}
+<link href="{{ asset("/css/login.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block login_layout %}
 
 <div class="row">
-    <div class="span4 offset4 well">
+    <div class="span4 offset4 well" id="loginpage">
         {% block fos_user_content %}{% endblock %}
     </div>
 </div>
