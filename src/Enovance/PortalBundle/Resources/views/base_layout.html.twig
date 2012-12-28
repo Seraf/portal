@@ -2,16 +2,20 @@
 <html lang="en">
     <title>{% block title %}{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{{ asset("/bundles/braincraftedbootstrap/css/bootstrap.css") }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset("/bundles/braincraftedbootstrap/css/bootstrap-responsive.css") }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset("/css/global.css") }}" rel="stylesheet" type="text/css" />
     {% block css %}{% endblock css %}
     {% block javascript %}{% endblock javascript %}    
     <body>    
-        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            {% block portal_layout %}
-            {% endblock portal_layout %}    
-        {% else %}
-            {% block login_layout %}
-            {% endblock login_layout %}
-        {% endif %}
+        <div class="container">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {% block portal_layout %}
+                    {% endblock portal_layout %}    
+                    {% else %}
+                        {% block login_layout %}
+                        {% endblock login_layout %}
+                    {% endif %}
+        </div>    
     </body>
 </html>

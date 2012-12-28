@@ -3,5 +3,10 @@
 {% block title %}Portal | Login{% endblock %}
 
 {% block login_layout %}
-    {% block fos_user_content %}{% endblock %}
+
+<div class="row">
+    <div class="span4 offset4 well">
+        {% block fos_user_content %}{% endblock %}
+    </div>
+</div>
 {% endblock %}
