@@ -1,3 +1,7 @@
+enovance_infrastructure:
+    resource: "@EnovanceInfrastructureBundle/Resources/config/routing.yml"
+    prefix:   /
+
 enovance_numeter:
     resource: "@EnovanceNumeterBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,12 +1,12 @@
 <?php
 
-namespace Enovance\NumeterBundle\Entity;
+namespace Enovance\InfrastructureBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="numeter_hosts")
+ * @ORM\Table(name="Hosts")
  */
 class Host
 {

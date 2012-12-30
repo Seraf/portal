@@ -1,7 +1,7 @@
-Enovance\NumeterBundle\Entity\Host:
+Enovance\InfrastuctreBundle\Entity\Host:
     type: entity
-    table: numeter_hosts
-    repositoryClass: Enovance\NumeterBundle\Entity\HostRepository
+    table: Hosts
+    repositoryClass: Enovance\InfrastructureBundle\Entity\HostRepository
     fields:
         id:
             type: integer

@@ -1,0 +1,7 @@
+parameters:
+#    enovance_infrastructure.example.class: Enovance\InfrastructureBundle\Example
+
+services:
+#    enovance_infrastructure.example:
+#        class: %enovance_infrastructure.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

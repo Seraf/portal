@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Enovance\PortalBundle\EnovancePortalBundle(),
             new Enovance\UserBundle\EnovanceUserBundle(),
             new Enovance\NumeterBundle\EnovanceNumeterBundle(),
+            new Enovance\InfrastructureBundle\EnovanceInfrastructureBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
