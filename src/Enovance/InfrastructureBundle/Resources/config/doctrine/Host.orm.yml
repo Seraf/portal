@@ -24,4 +24,7 @@ Enovance\InfrastructureBundle\Entity\Host:
         storage:
             targetEntity: Enovance\NumeterBundle\Entity\Storage
             inversedBy: hosts
+        test:
+            targetEntity: Enovance\LogBundle\Entity\Test
+            inversedBy: hosts
     lifecycleCallbacks: {  }

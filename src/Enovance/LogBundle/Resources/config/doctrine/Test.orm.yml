@@ -1,0 +1,17 @@
+Enovance\LogBundle\Entity\Test:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        test:
+            type: string
+            length: 255
+    oneToMany:
+        hosts:
+            targetEntity: Enovance\InfrastructureBundle\Entity\Host
+            mappedBy: test
+    lifecycleCallbacks: {  }

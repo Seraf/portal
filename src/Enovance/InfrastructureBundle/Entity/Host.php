@@ -35,6 +35,11 @@ class Host
      */
     private $storage;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Enovance\LogBundle\Entity\Test", inversedBy="hosts", cascade={"all"})
+     */
+    private $test;
+
 
     /**
      * Get id
