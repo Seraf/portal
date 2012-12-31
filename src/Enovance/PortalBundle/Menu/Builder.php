@@ -4,7 +4,8 @@ namespace Enovance\PortalBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
-
+use Enovance\PortalBundle\MenuEvents;
+use Enovance\PortalBundle\Event\ConfigureMenuEvent;
 /**
  * Builder
  *
@@ -29,15 +30,8 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
-        $item = $menu->addChild('Home', array('uri' => '/'));
-        $item->setCurrent(true);
-        $menu->addChild('Graphs', array('uri' => 'graphs'));
-        $menu->addChild('Link 2', array('uri' => '#'));
-        $dropdown = $menu->addChild('Dropdown');
-        $dropdown->addChild('Action', array('uri' => '#'));
-        $dropdown->addChild('Another action', array('uri' => '#'));
-        $dropdown->addChild('Something else here', array('uri' => '#'));
-
+        $item = $menu->addChild('Dashboard', array('uri' => '/dashboard'));
+        $this->container->get('event_dispatcher')->dispatch(ConfigureMenuEvent::CONFIGURE, new ConfigureMenuEvent($factory, $menu));
 
         return $menu;
     }
