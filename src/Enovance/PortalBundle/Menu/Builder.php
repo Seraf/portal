@@ -39,11 +39,10 @@ class Builder extends ContainerAware
     public function SessionNavbar(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
-
-        $dropdown = $menu->addChild('Dropdown');
-        $dropdown->addChild('Action', array('uri' => '#'));
-        $dropdown->addChild('Another action', array('uri' => '#'));
-        $dropdown->addChild('Something else here', array('uri' => '#'));
+    	$user = $this->container->get('security.context')->getToken()->getUser();  // Get the current logged in user
+        $dropdown = $menu->addChild($user->getFirstname().' '.$user->getLastname());
+        $dropdown->addChild('Profile', array('uri' => '/profile'));
+        $dropdown->addChild('Logout', array('uri' => '/logout'));
 
         return $menu;
     }
