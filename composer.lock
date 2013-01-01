@@ -1596,18 +1596,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "c6445fb5cd6823f7bd65108a717064957b6eafd5"
+                "reference": "01bf732b8b52e0bfaf1c645638bfcdd4e2f13492"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/c6445fb5cd6823f7bd65108a717064957b6eafd5",
-                "reference": "c6445fb5cd6823f7bd65108a717064957b6eafd5",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/01bf732b8b52e0bfaf1c645638bfcdd4e2f13492",
+                "reference": "01bf732b8b52e0bfaf1c645638bfcdd4e2f13492",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-02-01 09:44:45",
+            "time": "2013-02-08 21:03:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1645,12 +1645,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/zendframework/zf2.git",
-                "reference": "15b436ada67593b5634bfccec9a3df121315ca83"
+                "reference": "d3d01e29b913f024114d9e1c5f7135149fec4c2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/15b436ada67593b5634bfccec9a3df121315ca83",
-                "reference": "15b436ada67593b5634bfccec9a3df121315ca83",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/d3d01e29b913f024114d9e1c5f7135149fec4c2f",
+                "reference": "d3d01e29b913f024114d9e1c5f7135149fec4c2f",
                 "shasum": ""
             },
             "require": {
@@ -1719,7 +1719,7 @@
                 "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
                 "pecl-weakref": "Implementation of weak references for Zend\\Stdlib\\CallbackHandler"
             },
-            "time": "2013-02-07 23:00:11",
+            "time": "2013-02-08 20:59:47",
             "bin": [
                 "bin/classmap_generator.php"
             ],

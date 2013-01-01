@@ -1,3 +1,7 @@
+enovance_user:
+    resource: "@EnovanceUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 enovance_log:
     resource: "@EnovanceLogBundle/Resources/config/routing.yml"
     prefix:   /
@@ -8,10 +12,6 @@ enovance_infrastructure:
 
 enovance_numeter:
     resource: "@EnovanceNumeterBundle/Resources/config/routing.yml"
-    prefix:   /
-
-enovance_user:
-    resource: "@EnovanceUserBundle/Resources/config/routing.yml"
     prefix:   /
 
 enovance_portal:

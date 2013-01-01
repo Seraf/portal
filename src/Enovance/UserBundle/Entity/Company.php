@@ -45,11 +45,17 @@ class Company
     private $users;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $hosts;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->hosts = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
     /**
@@ -208,5 +214,38 @@ class Company
     public function getUsers()
     {
         return $this->users;
+    }
+
+    /**
+     * Add hosts
+     *
+     * @param \Enovance\InfrastructureBundle\Entity\Host $hosts
+     * @return Company
+     */
+    public function addHost(\Enovance\InfrastructureBundle\Entity\Host $hosts)
+    {
+        $this->hosts[] = $hosts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove hosts
+     *
+     * @param \Enovance\InfrastructureBundle\Entity\Host $hosts
+     */
+    public function removeHost(\Enovance\InfrastructureBundle\Entity\Host $hosts)
+    {
+        $this->hosts->removeElement($hosts);
+    }
+
+    /**
+     * Get hosts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHosts()
+    {
+        return $this->hosts;
     }
 }

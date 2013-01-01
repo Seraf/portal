@@ -17,7 +17,7 @@ Enovance\InfrastructureBundle\Entity\Host:
         addr:
             type: string
             length: '250'
-        hostUID:
+        NumeterUID:
             type: string
             length: '50'
     manyToOne:
@@ -28,4 +28,9 @@ Enovance\InfrastructureBundle\Entity\Host:
     #    test:
     #        targetEntity: Enovance\LogBundle\Entity\Test
     #        inversedBy: hosts
+    manyToMany:
+        companies:
+            targetEntity: Enovance\UserBundle\Entity\Company
+            mappedBy: hosts
+
     lifecycleCallbacks: {  }

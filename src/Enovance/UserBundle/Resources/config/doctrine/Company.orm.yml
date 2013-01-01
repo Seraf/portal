@@ -31,5 +31,16 @@ Enovance\UserBundle\Entity\Company:
         users:
             targetEntity: Enovance\UserBundle\Entity\User
             mappedBy: company
-            
+    manyToMany:
+         hosts:
+             targetEntity: Enovance\InfrastructureBundle\Entity\Host
+             inversedBy: companies
+             joinTable:
+                 name: host_company
+                 joinColumns:
+                     company_id:
+                         referencedColumnName: id
+                 inverseJoinColumns:
+                     host_id:
+                         referencedColumnName: id
     lifecycleCallbacks: {  }

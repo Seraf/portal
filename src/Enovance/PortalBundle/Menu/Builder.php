@@ -30,7 +30,7 @@ class Builder extends ContainerAware
     {
         $menu = $factory->createItem('root');
 
-        $item = $menu->addChild('Dashboard', array('uri' => '/dashboard'));
+        $item = $menu->addChild('Dashboard', array('route' => 'enovance_portal_dashboard_index'));
         $this->container->get('event_dispatcher')->dispatch(ConfigureMenuEvent::CONFIGURE, new ConfigureMenuEvent($factory, $menu));
 
         return $menu;
@@ -41,7 +41,7 @@ class Builder extends ContainerAware
         $menu = $factory->createItem('root');
     	$user = $this->container->get('security.context')->getToken()->getUser();  // Get the current logged in user
         $dropdown = $menu->addChild($user->getFirstname().' '.$user->getLastname());
-        $dropdown->addChild('Profile', array('uri' => '/profile'));
+        $dropdown->addChild('Profile', array('route' => 'fos_user_profile_show'));
         $dropdown->addChild('Logout', array('uri' => '/logout'));
 
         return $menu;

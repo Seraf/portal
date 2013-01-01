@@ -1,0 +1,16 @@
+{% extends 'EnovancePortalBundle::base_layout.html.twig' %}
+
+{% block title %}Portal | Dashboard{% endblock %}
+
+{% block css %}
+<link href="{{ asset("/css/numeter.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block portal_layout %}
+<div class="span2" id="sidebar">
+sidebar
+</div>
+<div class="span10" id="numeter-content">
+numeter-content
+</div>
+{% endblock %}

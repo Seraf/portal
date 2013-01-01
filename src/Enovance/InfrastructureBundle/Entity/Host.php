@@ -27,14 +27,26 @@ class Host
     /**
      * @var string
      */
-    private $hostUID;
+    private $NumeterUID;
 
     /**
      * @var \Enovance\NumeterBundle\Entity\Storage
      */
     private $storage;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $companies;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->companies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -92,26 +104,26 @@ class Host
     }
 
     /**
-     * Set hostUID
+     * Set NumeterUID
      *
-     * @param string $hostUID
+     * @param string $numeterUID
      * @return Host
      */
-    public function setHostUID($hostUID)
+    public function setNumeterUID($numeterUID)
     {
-        $this->hostUID = $hostUID;
+        $this->NumeterUID = $numeterUID;
     
         return $this;
     }
 
     /**
-     * Get hostUID
+     * Get NumeterUID
      *
      * @return string 
      */
-    public function getHostUID()
+    public function getNumeterUID()
     {
-        return $this->hostUID;
+        return $this->NumeterUID;
     }
 
     /**
@@ -135,5 +147,38 @@ class Host
     public function getStorage()
     {
         return $this->storage;
+    }
+
+    /**
+     * Add companies
+     *
+     * @param \Enovance\UserBundle\Entity\Company $companies
+     * @return Host
+     */
+    public function addCompanie(\Enovance\UserBundle\Entity\Company $companies)
+    {
+        $this->companies[] = $companies;
+    
+        return $this;
+    }
+
+    /**
+     * Remove companies
+     *
+     * @param \Enovance\UserBundle\Entity\Company $companies
+     */
+    public function removeCompanie(\Enovance\UserBundle\Entity\Company $companies)
+    {
+        $this->companies->removeElement($companies);
+    }
+
+    /**
+     * Get companies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCompanies()
+    {
+        return $this->companies;
     }
 }
