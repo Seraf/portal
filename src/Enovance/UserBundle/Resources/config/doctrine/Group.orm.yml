@@ -9,15 +9,15 @@ Enovance\UserBundle\Entity\Group:
             generator:
                 strategy: AUTO
     manyToMany:
-         users:
-             targetEntity: Enovance\UserBundle\Entity\User
+         permissions:
+             targetEntity: Enovance\UserBundle\Entity\Permission
              inversedBy: groups
              joinTable:
-                 name: portal_users_groups
+                 name: portal_groups_permissions
                  joinColumns:
                      group_id:
                          referencedColumnName: id
                  inverseJoinColumns:
-                     user_id:
+                     permission_id:
                          referencedColumnName: id
     lifecycleCallbacks: {  }

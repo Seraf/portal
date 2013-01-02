@@ -70,4 +70,42 @@ class Group extends BaseGroup
     {
         return $this->users;
     }
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $permissions;
+
+    /**
+     * Add permissions
+     *
+     * @param \Enovance\UserBundle\Entity\Permission $permissions
+     * @return Group
+     */
+    public function addPermission(\Enovance\UserBundle\Entity\Permission $permissions)
+    {
+        $this->permissions[] = $permissions;
+    
+        return $this;
+    }
+
+    /**
+     * Remove permissions
+     *
+     * @param \Enovance\UserBundle\Entity\Permission $permissions
+     */
+    public function removePermission(\Enovance\UserBundle\Entity\Permission $permissions)
+    {
+        $this->permissions->removeElement($permissions);
+    }
+
+    /**
+     * Get permissions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPermissions()
+    {
+        return $this->permissions;
+    }
 }

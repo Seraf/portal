@@ -14,9 +14,13 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $group = new Group();
-        $group->setName('Admin');
-
         $group->addUser($this->getReference('admin-user'));
+        $group->setName('Admin');
+        $group->addPermission($manager->merge($this->getReference('perm-graph-create')));
+        $group->addPermission($manager->merge($this->getReference('perm-graph-read')));
+        $group->addPermission($manager->merge($this->getReference('perm-graph-update')));
+        $group->addPermission($manager->merge($this->getReference('perm-graph-delete')));
+
         $manager->persist($group);
         $manager->flush();
     }

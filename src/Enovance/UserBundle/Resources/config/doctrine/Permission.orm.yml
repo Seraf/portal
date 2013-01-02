@@ -1,0 +1,24 @@
+Enovance\UserBundle\Entity\Permission:
+    type: entity
+    table: portal_permissions
+    repositoryClass: Enovance\UserBundle\Entity\PermissionRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '50'
+        machine_name:
+            type: string
+            length: '50'
+            unique: TRUE
+        weight:
+            type: integer
+    manyToMany:
+        groups:
+            targetEntity: Enovance\UserBundle\Entity\Group
+            mappedBy: permissions
+    lifecycleCallbacks: {  }
