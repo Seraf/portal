@@ -1,5 +1,6 @@
 parameters:
     enovance_numeter.configure_menu_listener: Enovance\NumeterBundle\EventListener\ConfigureMenuListener
+    enovance_numeter.admin_configure_menu_listener: Enovance\NumeterBundle\EventListener\AdminConfigureMenuListener
 
 #    enovance_numeter.example:
 #        class: %enovance_numeter.example.class%
@@ -9,3 +10,7 @@ services:
         class: %enovance_numeter.configure_menu_listener%
         tags:
           - { name: kernel.event_listener, event: enovance_portal.menu_configure, method: onMenuConfigure }
+    enovance_numeter.admin_configure_menu_listener:
+        class: %enovance_numeter.admin_configure_menu_listener%
+        tags:
+          - { name: kernel.event_listener, event: enovance_portal.admin_menu_configure, method: onAdminMenuConfigure }

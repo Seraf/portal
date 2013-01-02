@@ -14,9 +14,10 @@ class AdminConfigureMenuListener
     {
         $menu = $event->getMenu();
 
-        $menu->addChild('Users', array('route' => 'enovance_numeter_graph_index'));
-        $menu->addChild('Groups', array('route' => 'enovance_numeter_graph_index'));
-        $menu->addChild('Companies', array('route' => 'enovance_numeter_graph_index'));
+        $team = $menu->addChild('Team management');
+        $team->addChild('Users', array('route' => 'enovance_numeter_graph_index'));
+        $team->addChild('Groups', array('route' => 'enovance_numeter_graph_index'));
+        $team->addChild('Companies', array('route' => 'enovance_numeter_graph_index'));
     }
 }
 ?>

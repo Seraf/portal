@@ -1,8 +1,8 @@
 parameters:
-    enovance_numeter.admin_configure_menu_listener: Enovance\UserBundle\EventListener\AdminConfigureMenuListener
+    enovance_user.admin_configure_menu_listener: Enovance\UserBundle\EventListener\AdminConfigureMenuListener
 
 services:
-    enovance_numeter.admin_configure_menu_listener:
-        class: %enovance_numeter.admin_configure_menu_listener%
+    enovance_user.admin_configure_menu_listener:
+        class: %enovance_user.admin_configure_menu_listener%
         tags:
           - { name: kernel.event_listener, event: enovance_portal.admin_menu_configure, method: onAdminMenuConfigure }
