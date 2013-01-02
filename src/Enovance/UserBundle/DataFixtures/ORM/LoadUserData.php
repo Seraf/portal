@@ -19,7 +19,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
         $userAdmin->setEmail('julien.syx@enovance.com');
         $userAdmin->setFirstname('Julien');
         $userAdmin->setLastname('Syx');
-
+        $userAdmin->setEnabled(True);
         $manager->persist($userAdmin);
         $manager->flush();
 
@@ -31,7 +31,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
      */
     public function getOrder()
     {
-        return 1; // the order in which fixtures will be loaded
+        return 10; // the order in which fixtures will be loaded
     }
 }
 ?>

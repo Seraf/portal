@@ -22,4 +22,8 @@ Enovance\UserBundle\Entity\User:
         company:
             targetEntity: Enovance\UserBundle\Entity\Company
             inversedBy: users
+    manyToMany:
+        groups:
+            targetEntity: Enovance\UserBundle\Entity\Group
+            mappedBy: users
     lifecycleCallbacks: {  }

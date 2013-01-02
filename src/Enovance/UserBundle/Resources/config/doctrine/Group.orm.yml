@@ -1,0 +1,23 @@
+Enovance\UserBundle\Entity\Group:
+    type: entity
+    table: portal_groups
+    repositoryClass: Enovance\UserBundle\Entity\GroupRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToMany:
+         users:
+             targetEntity: Enovance\UserBundle\Entity\User
+             inversedBy: groups
+             joinTable:
+                 name: portal_users_groups
+                 joinColumns:
+                     group_id:
+                         referencedColumnName: id
+                 inverseJoinColumns:
+                     user_id:
+                         referencedColumnName: id
+    lifecycleCallbacks: {  }
