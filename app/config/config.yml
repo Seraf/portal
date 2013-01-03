@@ -63,8 +63,8 @@ swiftmailer:
 
 knp_menu:
     twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer
-        #template: knp_menu.html.twig
-        template: "BraincraftedBootstrapBundle:Menu:menu.html.twig"
+        template: EnovancePortalBundle:Default:knp_menu.html.twig
+        #template: "BraincraftedBootstrapBundle:Menu:menu.html.twig"
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
 

@@ -15,7 +15,7 @@ class AdminConfigureMenuListener
         $menu = $event->getMenu();
 
         $numeter = $menu->addChild('Numeter', array('attributes' => array('class' => 'submenu')));
-        $numeter->addChild('Graphs', array('route' => 'enovance_admin_graphs'));
+        $numeter->addChild('admin.Graphs', array('route' => 'enovance_admin_graphs'))->setExtra('translation_domain', 'NumeterBundle');
     }
 }
 ?>
