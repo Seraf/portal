@@ -1,3 +1,7 @@
 enovance_numeter_graph_index:
     pattern:  /graph/
     defaults: { _controller: EnovanceNumeterBundle:Default:index }
+
+enovance_admin_graphs:
+    pattern:  /admin/graphs
+    defaults: { _controller: EnovanceNumeterBundle:Admin:graphs }

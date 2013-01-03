@@ -16,3 +16,15 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
+
+enovance_admin_users:
+    pattern:  /admin/users
+    defaults: { _controller: EnovanceUserBundle:Admin:users }
+
+enovance_admin_groups:
+    pattern:  /admin/groups
+    defaults: { _controller: EnovanceUserBundle:Admin:groups }
+
+enovance_admin_companies:
+    pattern:  /admin/companies
+    defaults: { _controller: EnovanceUserBundle:Admin:companies }

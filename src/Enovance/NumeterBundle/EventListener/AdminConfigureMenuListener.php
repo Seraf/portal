@@ -14,8 +14,8 @@ class AdminConfigureMenuListener
     {
         $menu = $event->getMenu();
 
-        $numeter = $menu->addChild('Numeter');
-        $numeter->addChild('Graphs', array('route' => 'enovance_numeter_graph_index'));
+        $numeter = $menu->addChild('Numeter', array('attributes' => array('class' => 'submenu')));
+        $numeter->addChild('Graphs', array('route' => 'enovance_admin_graphs'));
     }
 }
 ?>

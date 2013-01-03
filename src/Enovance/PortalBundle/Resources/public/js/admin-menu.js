@@ -5,8 +5,8 @@ $(document).ready(function() {
     accordion_body = $('.nav-stacked li > .nav-stacked');
  
     // Open the first tab on load
- 
-    accordion_head.first().addClass('active').next().slideDown('normal');
+    if( !$('li.current_ancestor').length )
+        accordion_head.first().addClass('active').next().slideDown('normal');
     // Click function
  
     accordion_head.on('click', function(event) {
