@@ -28,3 +28,9 @@ enovance_admin_groups:
 enovance_admin_companies:
     pattern:  /admin/companies
     defaults: { _controller: EnovanceUserBundle:Admin:companies }
+
+_change_language:
+    pattern: /lang/{_locale}
+    defaults:  { _controller: EnovanceUserBundle:Default:changeLanguage, _locale: en }
+    requirements:
+      _locale: ^en|fr|es|de$

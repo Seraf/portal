@@ -10,4 +10,11 @@ class DefaultController extends Controller
     {
         return $this->render('EnovanceUserBundle:Default:index.html.twig', array('name' => $name));
     }
+
+    public function changeLanguageAction($_locale)
+    {
+        $this->get('request')->setLocale($_locale);
+        $referer = $this->get('request')->headers->get('referer');
+        return $this->redirect($referer);
+    }
 }

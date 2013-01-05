@@ -450,7 +450,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Maks3w/FR3DLdapBundle/archive/c017b9e89feb89914b7212144d2434185d36e955.zip",
+                "url": "https://api.github.com/repos/Maks3w/FR3DLdapBundle/zipball/c017b9e89feb89914b7212144d2434185d36e955",
                 "reference": "c017b9e89feb89914b7212144d2434185d36e955",
                 "shasum": ""
             },
@@ -564,7 +564,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/jdorn/sql-formatter.git",
+                "url": "https://github.com/jdorn/sql-formatter.git",
                 "reference": "7a92826fe2734518e9cd6ebcf1ba052e58351c34"
             },
             "dist": {
@@ -702,7 +702,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/JMSDiExtraBundle/archive/1.1.1.zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSDiExtraBundle/zipball/1.1.1",
                 "reference": "1.1.1",
                 "shasum": ""
             },
@@ -807,7 +807,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/JMSSecurityExtraBundle/archive/9ab6aceda50fc7a2b07d741ba4b3f0695508afcb.zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSecurityExtraBundle/zipball/9ab6aceda50fc7a2b07d741ba4b3f0695508afcb",
                 "reference": "9ab6aceda50fc7a2b07d741ba4b3f0695508afcb",
                 "shasum": ""
             },
@@ -1060,7 +1060,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/zipball/1.2.1",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1.2.1",
                 "reference": "1.2.1",
                 "shasum": ""
             },
@@ -1075,7 +1075,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "2012-08-29 04:53:20",
+            "time": "2012-08-29 11:53:20",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1210,7 +1210,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/archive/v2.1.7.zip",
+                "url": "https://api.github.com/repos/sensio/SensioGeneratorBundle/zipball/v2.1.7",
                 "reference": "v2.1.7",
                 "shasum": ""
             },
@@ -1429,7 +1429,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/SwiftmailerBundle/archive/v2.1.7.zip",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.1.7",
                 "reference": "v2.1.7",
                 "shasum": ""
             },
@@ -1479,12 +1479,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "50c3de3e89ae3743e90f678c7aeaedcfc04a433a"
+                "reference": "e7e61fdcc9aa8533630e79701cbf6260ec19530f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/50c3de3e89ae3743e90f678c7aeaedcfc04a433a",
-                "reference": "50c3de3e89ae3743e90f678c7aeaedcfc04a433a",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/e7e61fdcc9aa8533630e79701cbf6260ec19530f",
+                "reference": "e7e61fdcc9aa8533630e79701cbf6260ec19530f",
                 "shasum": ""
             },
             "require": {
@@ -1533,7 +1533,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": ">=1.0,<1.3-dev"
             },
-            "time": "2013-02-19 07:53:45",
+            "time": "2013-02-20 21:55:01",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1614,18 +1614,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "ac86c6368c8b1ed27adb436af54d0398b64cab1f"
+                "reference": "15336c154c960f7e55e8b9fc1043ce7764ed7edc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/ac86c6368c8b1ed27adb436af54d0398b64cab1f",
-                "reference": "ac86c6368c8b1ed27adb436af54d0398b64cab1f",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/15336c154c960f7e55e8b9fc1043ce7764ed7edc",
+                "reference": "15336c154c960f7e55e8b9fc1043ce7764ed7edc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-02-17 19:51:08",
+            "time": "2013-02-21 06:47:52",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1663,12 +1663,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zf2.git",
-                "reference": "0628ab1f67396cee11f1d565221b0792510adc1d"
+                "reference": "c64d2520f57be4f300e2af8c9f70cace63b587a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/0628ab1f67396cee11f1d565221b0792510adc1d",
-                "reference": "0628ab1f67396cee11f1d565221b0792510adc1d",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/c64d2520f57be4f300e2af8c9f70cace63b587a9",
+                "reference": "c64d2520f57be4f300e2af8c9f70cace63b587a9",
                 "shasum": ""
             },
             "require": {
@@ -1737,7 +1737,7 @@
                 "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
                 "pecl-weakref": "Implementation of weak references for Zend\\Stdlib\\CallbackHandler"
             },
-            "time": "2013-02-19 23:33:39",
+            "time": "2013-02-20 19:07:29",
             "bin": [
                 "bin/classmap_generator.php"
             ],
