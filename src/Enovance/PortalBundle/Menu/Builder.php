@@ -42,6 +42,7 @@ class Builder extends ContainerAware
     	$user = $this->container->get('security.context')->getToken()->getUser();  // Get the current logged in user
         $dropdown = $menu->addChild($user->getFirstname().' '.$user->getLastname());
         $dropdown->addChild('Profile', array('route' => 'fos_user_profile_show'));
+        //$dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
         $dropdown->addChild('Logout', array('uri' => '/logout'));
 
         return $menu;

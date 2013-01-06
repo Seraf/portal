@@ -18,10 +18,13 @@
         <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'UserBundle') }}" />
     </div>
     <div id="language">
-        <a href="{{ path('_change_language', { '_locale': 'fr' }) }}"><img src={{ asset("bundles/enovanceuser/images/flags/fr.png") }} alt="fr" /></a>
-        <a href="{{ path('_change_language', { '_locale': 'en' }) }}"><img src={{ asset("bundles/enovanceuser/images/flags/gb.png") }} alt="uk" /></a>
-        <a href="{{ path('_change_language', { '_locale': 'es' }) }}"><img src={{ asset("bundles/enovanceuser/images/flags/es.png") }} alt="es" /></a>
-        <a href="{{ path('_change_language', { '_locale': 'de' }) }}"><img src={{ asset("bundles/enovanceuser/images/flags/de.png") }} alt="de" /></a>
+        {% set routeName = app.request.attributes.get("_route") %}
+        {% set routeParams = app.request.attributes.get("_route_params") %}
+        {% for locale in ['en', 'fr', 'es', 'de'] %}
+            <a href="{{ path(routeName, routeParams|merge({"_locale": locale})) }}" {% if locale == app.request.locale %}class="active"{% endif %}>
+                <img src={{ asset("bundles/enovanceuser/images/flags/"~ locale ~".png") }} alt="{{ locale }}" />
+            </a>
+        {% endfor %}
     </div>
     <div class="clear"></div>
 </form>

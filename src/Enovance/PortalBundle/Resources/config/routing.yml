@@ -1,11 +1,11 @@
 enovance_portal_dashboard_index:
-    pattern:  /dashboard
+    pattern:  /{_locale}/dashboard
     defaults: { _controller: EnovancePortalBundle:Dashboard:index }
 
 enovance_portal_dashboard_default:
-    pattern:  /
+    pattern:  /{_locale}
     defaults: { _controller: EnovancePortalBundle:Dashboard:index }
 
 enovance_portal_admin_index:
-    pattern:  /admin
+    pattern:  /{_locale}/admin
     defaults: { _controller: EnovancePortalBundle:Admin:index }
