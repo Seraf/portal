@@ -1,6 +1,48 @@
 {
-    "hash": "a0afd825576678ba254629229d22913f",
+    "hash": "ba77cf08564954944dce69a6d60a239c",
     "packages": [
+        {
+            "name": "bcc/cron-manager-bundle",
+            "version": "dev-master",
+            "target-dir": "BCC/CronManagerBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelsalib/BCCCronManagerBundle.git",
+                "reference": "61792eda203d96645a4fdbb2be491b3e48b2a9f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelsalib/BCCCronManagerBundle/zipball/61792eda203d96645a4fdbb2be491b3e48b2a9f2",
+                "reference": "61792eda203d96645a4fdbb2be491b3e48b2a9f2",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/symfony": "<=2.2.x-dev"
+            },
+            "time": "2013-02-13 16:17:20",
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "BCC\\CronManagerBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Salib",
+                    "email": "michelsalib@hotmail.com",
+                    "homepage": "http://www.michelsalib.com"
+                }
+            ],
+            "description": "A cron table manager bundle for Symfony2",
+            "homepage": "http://github.com/michelsalib/BCCCronManagerBundle",
+            "keywords": [
+                "cron management"
+            ]
+        },
         {
             "name": "braincrafted/bootstrap-bundle",
             "version": "dev-master",
@@ -8,12 +50,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/braincrafted/bootstrap-bundle.git",
-                "reference": "e2b39ca4a7381b77d8c4d747c7cadc1e70d2744f"
+                "reference": "v1.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/e2b39ca4a7381b77d8c4d747c7cadc1e70d2744f",
-                "reference": "e2b39ca4a7381b77d8c4d747c7cadc1e70d2744f",
+                "url": "https://api.github.com/repos/braincrafted/bootstrap-bundle/zipball/v1.1.0",
+                "reference": "v1.1.0",
                 "shasum": ""
             },
             "require": {
@@ -31,7 +73,7 @@
                 "knplabs/knp-menu": "Required to use KnpMenuBundle.",
                 "knplabs/knp-menu-bundle": "BraincraftedBootstrapBundle styles the menus provided by KnpMenuBundle."
             },
-            "time": "2013-02-18 17:36:34",
+            "time": "2013-02-23 13:34:08",
             "type": "symfony-bundle",
             "autoload": {
                 "psr-0": {
@@ -374,13 +416,13 @@
             "version": "2.3.x-dev",
             "source": {
                 "type": "git",
-                "url": "git://github.com/doctrine/doctrine2.git",
-                "reference": "fdd0af34e6fced967b8751bc3e4792c11ef86d57"
+                "url": "https://github.com/doctrine/doctrine2.git",
+                "reference": "304acf0a1af15ebe049231b84a7630c75ecbe62d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/doctrine2/archive/fdd0af34e6fced967b8751bc3e4792c11ef86d57.zip",
-                "reference": "fdd0af34e6fced967b8751bc3e4792c11ef86d57",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/304acf0a1af15ebe049231b84a7630c75ecbe62d",
+                "reference": "304acf0a1af15ebe049231b84a7630c75ecbe62d",
                 "shasum": ""
             },
             "require": {
@@ -392,7 +434,7 @@
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
             },
-            "time": "2013-01-20 19:35:21",
+            "time": "2013-02-21 18:03:42",
             "bin": [
                 "bin/doctrine",
                 "bin/doctrine.php"
@@ -495,6 +537,60 @@
             ]
         },
         {
+            "name": "friendsofsymfony/jsrouting-bundle",
+            "version": "dev-master",
+            "target-dir": "FOS/JsRoutingBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
+                "reference": "1.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/1.1.2",
+                "reference": "1.1.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.0,<2.3-dev",
+                "symfony/serializer": ">=2.0,<2.3-dev",
+                "symfony/console": ">=2.0,<2.3-dev"
+            },
+            "time": "2013-01-14 18:53:13",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "FOS\\JsRoutingBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "william.durand1@gmail.com",
+                    "homepage": "http://www.willdurand.fr"
+                },
+                {
+                    "name": "FriendsOfSymfony Community",
+                    "homepage": "https://github.com/friendsofsymfony/FOSJsRoutingBundle/contributors"
+                }
+            ],
+            "description": "Symfony FOSJsRoutingBundle",
+            "homepage": "http://friendsofsymfony.github.com",
+            "keywords": [
+                "Js Routing"
+            ]
+        },
+        {
             "name": "friendsofsymfony/user-bundle",
             "version": "dev-master",
             "target-dir": "FOS/UserBundle",
@@ -565,18 +661,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jdorn/sql-formatter.git",
-                "reference": "7a92826fe2734518e9cd6ebcf1ba052e58351c34"
+                "reference": "3d8a97325e5894c72dd5c4d4f83dd3722d414d99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/7a92826fe2734518e9cd6ebcf1ba052e58351c34",
-                "reference": "7a92826fe2734518e9cd6ebcf1ba052e58351c34",
+                "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/3d8a97325e5894c72dd5c4d4f83dd3722d414d99",
+                "reference": "3d8a97325e5894c72dd5c4d4f83dd3722d414d99",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-02-11 00:21:20",
+            "time": "2013-02-22 05:16:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -862,6 +958,67 @@
             ]
         },
         {
+            "name": "knplabs/knp-components",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/knp-components.git",
+                "reference": "1.2.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/knp-components/zipball/1.2.2",
+                "reference": "1.2.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "suggest": {
+                "doctrine/orm": "to allow usage pagination with Doctrine ORM",
+                "doctrine/common": "to allow usage pagination with Doctrine ArrayCollection",
+                "doctrine/mongodb-odm": "to allow usage pagination with Doctrine ODM MongoDB",
+                "ruflin/Elastica": "to allow usage pagination with ElasticSearch Client",
+                "propel/propel1": "to allow usage pagination with Propel ORM",
+                "solarium/solarium": "to allow usage pagination with Solarium Client"
+            },
+            "time": "2013-02-20 12:05:07",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Component": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/knp-components/contributors"
+                }
+            ],
+            "description": "Knplabs component library",
+            "homepage": "http://github.com/KnpLabs/knp-components",
+            "keywords": [
+                "pager",
+                "components",
+                "knp",
+                "knplabs",
+                "paginator"
+            ]
+        },
+        {
             "name": "knplabs/knp-menu",
             "version": "dev-master",
             "source": {
@@ -980,17 +1137,76 @@
             ]
         },
         {
+            "name": "knplabs/knp-paginator-bundle",
+            "version": "dev-master",
+            "target-dir": "Knp/Bundle/PaginatorBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpPaginatorBundle.git",
+                "reference": "v2.3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpPaginatorBundle/zipball/v2.3.2",
+                "reference": "v2.3.2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": ">=2.0,<3.0",
+                "knplabs/knp-components": ">=1.1,<2.0",
+                "twig/twig": ">=1.5,<2.0"
+            },
+            "time": "2013-02-18 17:29:20",
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\PaginatorBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony2 Community",
+                    "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle/contributors"
+                }
+            ],
+            "description": "Paginator bundle for Symfony2 to automate pagination and simplify sorting and other features",
+            "homepage": "http://github.com/KnpLabs/KnpPaginatorBundle",
+            "keywords": [
+                "Symfony2",
+                "pager",
+                "knp",
+                "knplabs",
+                "paginator",
+                "pagination",
+                "bundle"
+            ]
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "v1.1.0-alpha3"
+                "reference": "4fdc4b425cf2a55b2ffc068a4a1f215c73dbe863"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0-alpha3",
-                "reference": "v1.1.0-alpha3",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/4fdc4b425cf2a55b2ffc068a4a1f215c73dbe863",
+                "reference": "4fdc4b425cf2a55b2ffc068a4a1f215c73dbe863",
                 "shasum": ""
             },
             "require": {
@@ -1016,7 +1232,7 @@
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin"
             },
-            "time": "2013-02-18 16:17:57",
+            "time": "2013-02-24 00:37:33",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1112,13 +1328,13 @@
             "target-dir": "Sensio/Bundle/DistributionBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioDistributionBundle",
-                "reference": "615f76309dae8c45c72b69578b034713c09767d1"
+                "url": "https://github.com/sensio/SensioDistributionBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/615f76309dae8c45c72b69578b034713c09767d1",
-                "reference": "615f76309dae8c45c72b69578b034713c09767d1",
+                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1159,19 +1375,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle.git",
-                "reference": "af47fde5bb3d5712be2bab4211e55a7cf92cf23d"
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/af47fde5bb3d5712be2bab4211e55a7cf92cf23d",
-                "reference": "af47fde5bb3d5712be2bab4211e55a7cf92cf23d",
+                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
                 "symfony/framework-bundle": "2.1.*",
-                "doctrine/common": ">=2.1,<2.4-dev"
+                "doctrine/common": ">=2.1,<2.5-dev"
             },
-            "time": "2013-02-19 08:31:32",
+            "time": "2013-02-22 17:57:31",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1205,13 +1421,13 @@
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioGeneratorBundle",
-                "reference": "v2.1.7"
+                "url": "https://github.com/sensio/SensioGeneratorBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioGeneratorBundle/zipball/v2.1.7",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/sensio/SensioGeneratorBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1303,12 +1519,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "bc24734343cc6a77dc143d0cf80f33b5e18e4cc0"
+                "reference": "v2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/bc24734343cc6a77dc143d0cf80f33b5e18e4cc0",
-                "reference": "bc24734343cc6a77dc143d0cf80f33b5e18e4cc0",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.1.2",
+                "reference": "v2.1.2",
                 "shasum": ""
             },
             "require": {
@@ -1328,7 +1544,7 @@
             "suggest": {
                 "symfony/twig-bundle": ">=2.1.0,<2.3-dev"
             },
-            "time": "2013-02-18 16:21:03",
+            "time": "2013-02-23 22:29:21",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1365,13 +1581,13 @@
             "target-dir": "Symfony/Bundle/MonologBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/MonologBundle",
-                "reference": "253fcda1128a0301aa68d040302cade65095f2c6"
+                "url": "https://github.com/symfony/MonologBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/MonologBundle/archive/253fcda1128a0301aa68d040302cade65095f2c6.zip",
-                "reference": "253fcda1128a0301aa68d040302cade65095f2c6",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1424,13 +1640,13 @@
             "target-dir": "Symfony/Bundle/SwiftmailerBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/SwiftmailerBundle",
-                "reference": "v2.1.7"
+                "url": "https://github.com/symfony/SwiftmailerBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.1.7",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1479,18 +1695,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "e7e61fdcc9aa8533630e79701cbf6260ec19530f"
+                "reference": "ae5b94fd7cc6085e9b932b49fb44a38ea49e25f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/e7e61fdcc9aa8533630e79701cbf6260ec19530f",
-                "reference": "e7e61fdcc9aa8533630e79701cbf6260ec19530f",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/ae5b94fd7cc6085e9b932b49fb44a38ea49e25f7",
+                "reference": "ae5b94fd7cc6085e9b932b49fb44a38ea49e25f7",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "doctrine/common": ">2.2,<2.4-dev",
-                "twig/twig": ">=1.9.1,<2.0-dev"
+                "twig/twig": ">=1.9.1,<2.0-dev",
+                "doctrine/common": ">=2.2,<3.0"
             },
             "replace": {
                 "symfony/doctrine-bridge": "self.version",
@@ -1533,7 +1749,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": ">=1.0,<1.3-dev"
             },
-            "time": "2013-02-20 21:55:01",
+            "time": "2013-02-23 22:02:46",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1663,12 +1879,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zf2.git",
-                "reference": "c64d2520f57be4f300e2af8c9f70cace63b587a9"
+                "reference": "9598a976c20b8cf613deaf27db9b799c677f0f04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zf2/zipball/c64d2520f57be4f300e2af8c9f70cace63b587a9",
-                "reference": "c64d2520f57be4f300e2af8c9f70cace63b587a9",
+                "url": "https://api.github.com/repos/zendframework/zf2/zipball/9598a976c20b8cf613deaf27db9b799c677f0f04",
+                "reference": "9598a976c20b8cf613deaf27db9b799c677f0f04",
                 "shasum": ""
             },
             "require": {
@@ -1737,7 +1953,7 @@
                 "zendframework/zendpdf": "ZendPdf for creating PDF representations of barcodes",
                 "pecl-weakref": "Implementation of weak references for Zend\\Stdlib\\CallbackHandler"
             },
-            "time": "2013-02-20 19:07:29",
+            "time": "2013-02-22 17:38:13",
             "bin": [
                 "bin/classmap_generator.php"
             ],
@@ -1781,6 +1997,9 @@
         "twig/extensions": 20,
         "kriswallsmith/assetic": 20,
         "knplabs/knp-menu-bundle": 20,
-        "braincrafted/bootstrap-bundle": 20
+        "braincrafted/bootstrap-bundle": 20,
+        "friendsofsymfony/jsrouting-bundle": 20,
+        "knplabs/knp-paginator-bundle": 20,
+        "bcc/cron-manager-bundle": 20
     }
 }

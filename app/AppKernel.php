@@ -28,7 +28,10 @@ class AppKernel extends Kernel
             new Enovance\UserBundle\EnovanceUserBundle(),
             new Enovance\NumeterBundle\EnovanceNumeterBundle(),
             new Enovance\InfrastructureBundle\EnovanceInfrastructureBundle(),
-            new Enovance\LogBundle\EnovanceLogBundle()
+            new Enovance\LogBundle\EnovanceLogBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+	    new BCC\CronManagerBundle\BCCCronManagerBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

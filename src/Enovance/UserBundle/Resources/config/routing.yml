@@ -15,6 +15,19 @@ enovance_admin_users:
     pattern:  /{_locale}/admin/users
     defaults: { _controller: EnovanceUserBundle:Admin:users }
 
+enovance_admin_user_new:
+    pattern: /{_locale}/admin/user/new
+    defaults:  { _controller: EnovanceUserBundle:Admin:newUser }
+
+enovance_admin_user_edit:
+    pattern: /{_locale}/admin/user/{id}/edit
+    defaults:  { _controller: EnovanceUserBundle:Admin:editUser }
+
+enovance_admin_user_delete:
+    pattern: /{_locale}/admin/user/{id}/delete
+    defaults:  { _controller: EnovanceUserBundle:Admin:deleteUser }
+
+
 enovance_admin_groups:
     pattern:  /{_locale}/admin/groups
     defaults: { _controller: EnovanceUserBundle:Admin:groups }
@@ -22,9 +35,3 @@ enovance_admin_groups:
 enovance_admin_companies:
     pattern:  /{_locale}/admin/companies
     defaults: { _controller: EnovanceUserBundle:Admin:companies }
-
-_change_language:
-    pattern: /lang/{_locale}
-    defaults:  { _controller: EnovanceUserBundle:Default:changeLanguage, _locale: en }
-    requirements:
-      _locale: ^en|fr|es|de$
