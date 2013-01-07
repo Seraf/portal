@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    $('#a-sidebar').css("height", $('#a-content').height());
     // Store variables
  
     var accordion_head = $('.nav-stacked > li > span'),
