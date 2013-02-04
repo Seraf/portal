@@ -1,3 +1,7 @@
+html {
+    height: 100%;
+}
+
 body {
     font-family:  helvetica,sans-serif, Helvetica, "lucida grande",tahoma,verdana,arial,sans-serif;
     font-size: 13px;
@@ -12,4 +16,19 @@ body {
     background-repeat: no-repeat;
     background-attachment:fixed;
     position: relative;
+    height: 100%;
+    padding-top: 65px;
 }
+
+.navbar .brand {
+    margin-left: 20px;
+}
+
+#container {
+    height: 100%;
+}
+
+#content {
+    height:100%;
+}
+

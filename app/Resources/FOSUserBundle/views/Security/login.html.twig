@@ -1,20 +1,29 @@
 {% extends "EnovanceUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
-{% endif %}
-<form action="{{ path("fos_user_security_check") }}" method="post">
+<form action="{{ path("fos_user_security_check") }}" method="post" id="connectform">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-
-    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-    <input type="password" id="password" name="_password" required="required" />
-
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+    <div id="infologin">
+        {% if error %}
+            {{ error|trans({}, 'UserBundle') }}
+        {% endif %}
+    </div>
+    <div class="element">
+        <input type="text" id="username" name="_username" value="{{ last_username }}" autofocus required="required" placeholder="{{ 'security.login.username'|trans({}, 'UserBundle') }}" />
+    </div>
+    <div class="element">
+        <input type="password" id="password" name="_password" required="required" placeholder="{{ 'security.login.password'|trans({}, 'UserBundle') }}" />
+    </div>
+    <div class="element">
+        <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'UserBundle') }}" />
+    </div>
+    <div id="language">
+        <img src={{ asset("/images/flags/fr.png") }} alt="fr" />
+        <img src={{ asset("/images/flags/gb.png") }} alt="uk" />
+        <img src={{ asset("/images/flags/us.png") }} alt="us" />
+        <img src={{ asset("/images/flags/es.png") }} alt="es" />
+        <img src={{ asset("/images/flags/de.png") }} alt="de" />
+    </div>
+    <div class="clear"></div>
 </form>
 {% endblock fos_user_content %}
