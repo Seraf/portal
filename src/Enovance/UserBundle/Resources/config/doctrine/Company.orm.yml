@@ -1,0 +1,35 @@
+Enovance\UserBundle\Entity\Company:
+    type: entity
+    table: portal_company
+    repositoryClass: Enovance\UserBundle\Entity\CompanyRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '50'
+        address:
+            type: string
+            length: '150'
+            nullable: TRUE
+        city:
+            type: string
+            length: '50'
+            nullable: TRUE
+        country:
+            type: string
+            length: '50'
+            nullable: TRUE
+        phone:
+            type: string
+            length: '20'
+            nullable: TRUE
+    OnetoMany:
+        users:
+            targetEntity: Enovance\UserBundle\Entity\User
+            mappedBy: company
+            
+    lifecycleCallbacks: {  }

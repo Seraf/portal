@@ -1,0 +1,21 @@
+Enovance\UserBundle\Entity\User:
+    type: entity
+    table: portal_users
+    repositoryClass: Enovance\UserBundle\Entity\UserRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        firstname:
+            type: string
+            length: '50'
+        lastname:
+            type: string
+            length: '150'
+        phone:
+            type: string
+            length: '20'
+            nullable: TRUE
+    lifecycleCallbacks: {  }

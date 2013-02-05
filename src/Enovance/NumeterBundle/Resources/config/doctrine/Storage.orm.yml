@@ -1,0 +1,19 @@
+Enovance\NumeterBundle\Entity\Storage:
+    type: entity
+    table: numeter_storage
+    repositoryClass: Enovance\NumeterBundle\Entity\StorageRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '50'
+        addr:
+            type: string
+            length: '50'
+        port:
+            type: integer
+    lifecycleCallbacks: {  }

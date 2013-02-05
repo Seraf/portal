@@ -1,0 +1,7 @@
+parameters:
+#    enovance_numeter.example.class: Enovance\NumeterBundle\Example
+
+services:
+#    enovance_numeter.example:
+#        class: %enovance_numeter.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

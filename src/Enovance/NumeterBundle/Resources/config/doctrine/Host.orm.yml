@@ -1,0 +1,23 @@
+Enovance\NumeterBundle\Entity\Host:
+    type: entity
+    table: numeter_hosts
+    repositoryClass: Enovance\NumeterBundle\Entity\HostRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        name:
+            type: string
+            length: '50'
+        addr:
+            type: string
+            length: '50'
+        hostID:
+            type: string
+            length: '50'
+        storageID:
+            type: string
+            length: '50'
+    lifecycleCallbacks: {  }
