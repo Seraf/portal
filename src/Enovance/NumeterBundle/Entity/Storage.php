@@ -30,7 +30,7 @@ class Storage
     private $port;
 
     /**
-     * @ORM\OneToMany(targetEntity="Host", mappedBy="storageID", cascade={"all"})
+     * @ORM\OneToMany(targetEntity="Enovance\InfrastructureBundle\Entity\Host", mappedBy="storage", cascade={"all"})
      */
     private $hosts;
 

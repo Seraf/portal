@@ -28,12 +28,12 @@ class Host
     /**
      * @var string
      */
-    private $hostID;
+    private $hostUID;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Storage", inversedBy="hosts", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="Enovance\NumeterBundle\Entity\Storage", inversedBy="hosts", cascade={"all"})
      */
-    private $storageID;
+    private $storage;
 
 
     /**
@@ -93,48 +93,49 @@ class Host
     }
 
     /**
-     * Set hostID
+     * Set hostUID
      *
-     * @param string $hostID
+     * @param string $hostUID
      * @return Host
      */
-    public function setHostID($hostID)
+    public function setHostUID($hostUID)
     {
-        $this->hostID = $hostID;
+        $this->hostUID = $hostUID;
     
         return $this;
     }
 
     /**
-     * Get hostID
+     * Get hostUID
      *
      * @return string 
      */
-    public function getHostID()
+    public function getHostUID()
     {
-        return $this->hostID;
+        return $this->hostUID;
     }
 
     /**
-     * Set storageID
+     * Set storage
      *
-     * @param string $storageID
+     * @param string $storage
      * @return Host
      */
-    public function setStorageID($storageID)
+    public function setStorage($storage)
     {
-        $this->storageID = $storageID;
+        $this->storage = $storage;
     
         return $this;
     }
 
     /**
-     * Get storageID
+     * Get storage
      *
      * @return string 
      */
-    public function getStorageID()
+    public function getStorage()
     {
-        return $this->storageID;
+        return $this->storage;
     }
 }
+?>

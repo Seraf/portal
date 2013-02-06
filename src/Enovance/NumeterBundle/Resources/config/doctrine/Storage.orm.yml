@@ -16,4 +16,8 @@ Enovance\NumeterBundle\Entity\Storage:
             length: '50'
         port:
             type: integer
+    oneToMany:
+        hosts:
+            targetEntity: Enovance\InfrastructureBundle\Entity\Host
+            mappedBy: storage
     lifecycleCallbacks: {  }

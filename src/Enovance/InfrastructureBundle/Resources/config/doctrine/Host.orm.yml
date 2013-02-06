@@ -1,7 +1,10 @@
-Enovance\InfrastuctreBundle\Entity\Host:
+Enovance\InfrastructureBundle\Entity\Host:
     type: entity
     table: Hosts
     repositoryClass: Enovance\InfrastructureBundle\Entity\HostRepository
+    indexes:
+        name_index:
+            columns: [ name ]
     fields:
         id:
             type: integer
@@ -13,11 +16,12 @@ Enovance\InfrastuctreBundle\Entity\Host:
             length: '50'
         addr:
             type: string
-            length: '50'
-        hostID:
+            length: '250'
+        hostUID:
             type: string
             length: '50'
-        storageID:
-            type: string
-            length: '50'
+    manyToOne:
+        storage:
+            targetEntity: Enovance\NumeterBundle\Entity\Storage
+            inversedBy: hosts
     lifecycleCallbacks: {  }
