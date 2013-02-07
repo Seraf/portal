@@ -5,8 +5,7 @@ namespace Enovance\InfrastructureBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="Hosts")
+ * Host
  */
 class Host
 {
@@ -31,14 +30,9 @@ class Host
     private $hostUID;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Enovance\NumeterBundle\Entity\Storage", inversedBy="hosts", cascade={"all"})
+     * @var \Enovance\NumeterBundle\Entity\Storage
      */
     private $storage;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Enovance\LogBundle\Entity\Test", inversedBy="hosts", cascade={"all"})
-     */
-    private $test;
 
 
     /**
@@ -123,10 +117,10 @@ class Host
     /**
      * Set storage
      *
-     * @param string $storage
+     * @param \Enovance\NumeterBundle\Entity\Storage $storage
      * @return Host
      */
-    public function setStorage($storage)
+    public function setStorage(\Enovance\NumeterBundle\Entity\Storage $storage = null)
     {
         $this->storage = $storage;
     
@@ -136,11 +130,10 @@ class Host
     /**
      * Get storage
      *
-     * @return string 
+     * @return \Enovance\NumeterBundle\Entity\Storage 
      */
     public function getStorage()
     {
         return $this->storage;
     }
 }
-?>

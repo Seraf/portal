@@ -1,7 +1,7 @@
 <?php
 
 namespace Enovance\UserBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -15,11 +15,6 @@ class Company
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="company")
-     */
-    protected $users;
-
-    /**
      * @var string
      */
     private $name;
@@ -27,29 +22,36 @@ class Company
     /**
      * @var string
      */
-    private $address = null;
+    private $address;
 
     /**
      * @var string
      */
-    private $city = null;
+    private $city;
 
     /**
      * @var string
      */
-    private $country = null;
+    private $country;
 
     /**
      * @var string
      */
-    private $phone = null;
+    private $phone;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
+    private $users;
+
+    /**
+     * Constructor
+     */
     public function __construct()
     {
-        $this->users = new ArrayCollection();
+        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
-
+    
     /**
      * Get id
      *
@@ -173,5 +175,38 @@ class Company
     public function getPhone()
     {
         return $this->phone;
+    }
+
+    /**
+     * Add users
+     *
+     * @param \Enovance\UserBundle\Entity\User $users
+     * @return Company
+     */
+    public function addUser(\Enovance\UserBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \Enovance\UserBundle\Entity\User $users
+     */
+    public function removeUser(\Enovance\UserBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }

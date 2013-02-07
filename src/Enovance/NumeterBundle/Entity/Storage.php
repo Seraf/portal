@@ -30,11 +30,18 @@ class Storage
     private $port;
 
     /**
-     * @ORM\OneToMany(targetEntity="Enovance\InfrastructureBundle\Entity\Host", mappedBy="storage", cascade={"all"})
+     * @var \Doctrine\Common\Collections\Collection
      */
     private $hosts;
 
-
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->hosts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -112,5 +119,38 @@ class Storage
     public function getPort()
     {
         return $this->port;
+    }
+
+    /**
+     * Add hosts
+     *
+     * @param \Enovance\InfrastructureBundle\Entity\Host $hosts
+     * @return Storage
+     */
+    public function addHost(\Enovance\InfrastructureBundle\Entity\Host $hosts)
+    {
+        $this->hosts[] = $hosts;
+    
+        return $this;
+    }
+
+    /**
+     * Remove hosts
+     *
+     * @param \Enovance\InfrastructureBundle\Entity\Host $hosts
+     */
+    public function removeHost(\Enovance\InfrastructureBundle\Entity\Host $hosts)
+    {
+        $this->hosts->removeElement($hosts);
+    }
+
+    /**
+     * Get hosts
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getHosts()
+    {
+        return $this->hosts;
     }
 }

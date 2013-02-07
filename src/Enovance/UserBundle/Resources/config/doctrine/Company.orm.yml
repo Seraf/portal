@@ -1,6 +1,6 @@
 Enovance\UserBundle\Entity\Company:
     type: entity
-    table: portal_company
+    table: portal_companies
     repositoryClass: Enovance\UserBundle\Entity\CompanyRepository
     fields:
         id:
@@ -27,7 +27,7 @@ Enovance\UserBundle\Entity\Company:
             type: string
             length: '20'
             nullable: TRUE
-    OnetoMany:
+    oneToMany:
         users:
             targetEntity: Enovance\UserBundle\Entity\User
             mappedBy: company

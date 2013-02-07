@@ -1,27 +1,18 @@
 <?php
 
 namespace Enovance\UserBundle\Entity;
-
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
- * @ORM\Table(name="portal_users")
+ * User
  */
 class User extends BaseUser
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @var integer
      */
     protected $id;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Company", inversedBy="users", cascade={"all"})
-     */
-    private $company;
 
     /**
      * @var string
@@ -36,12 +27,27 @@ class User extends BaseUser
     /**
      * @var string
      */
-    private $phone = null;
+    private $phone;
+
+    /**
+     * @var \Enovance\UserBundle\Entity\Company
+     */
+    private $company;
+
 
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**
@@ -90,7 +96,6 @@ class User extends BaseUser
         return $this->lastname;
     }
 
-
     /**
      * Set phone
      *
@@ -114,14 +119,26 @@ class User extends BaseUser
         return $this->phone;
     }
 
+    /**
+     * Set company
+     *
+     * @param \Enovance\UserBundle\Entity\Company $company
+     * @return User
+     */
+    public function setCompany(\Enovance\UserBundle\Entity\Company $company = null)
+    {
+        $this->company = $company;
+    
+        return $this;
+    }
 
     /**
-     * Get id
+     * Get company
      *
-     * @return integer 
+     * @return \Enovance\UserBundle\Entity\Company 
      */
-    public function getId()
+    public function getCompany()
     {
-        return $this->id;
+        return $this->company;
     }
 }

@@ -18,4 +18,8 @@ Enovance\UserBundle\Entity\User:
             type: string
             length: '20'
             nullable: TRUE
+    manyToOne:
+        company:
+            targetEntity: Enovance\UserBundle\Entity\Company
+            inversedBy: users
     lifecycleCallbacks: {  }

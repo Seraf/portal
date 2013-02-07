@@ -17,7 +17,7 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
     {
         $company = new Company();
         $company->setName('Enovance');
-        $company->setUser($this->getReference('admin-user'));
+        $company->addUser($this->getReference('admin-user'));
 
         $manager->persist($company);
         $manager->flush();
