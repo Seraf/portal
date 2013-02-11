@@ -18,13 +18,20 @@ class Group extends BaseGroup
     /**
      * @var \Doctrine\Common\Collections\Collection
      */
+    private $permissions;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     */
     private $users;
 
     /**
      * Constructor
      */
-    public function __construct()
+    public function __construct($name, $roles=array())
     {
+        parent::__construct($name, $roles);
+        $this->permissions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
@@ -36,6 +43,39 @@ class Group extends BaseGroup
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Add permissions
+     *
+     * @param \Enovance\UserBundle\Entity\Permission $permissions
+     * @return Group
+     */
+    public function addPermission(\Enovance\UserBundle\Entity\Permission $permissions)
+    {
+        $this->permissions[] = $permissions;
+    
+        return $this;
+    }
+
+    /**
+     * Remove permissions
+     *
+     * @param \Enovance\UserBundle\Entity\Permission $permissions
+     */
+    public function removePermission(\Enovance\UserBundle\Entity\Permission $permissions)
+    {
+        $this->permissions->removeElement($permissions);
+    }
+
+    /**
+     * Get permissions
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getPermissions()
+    {
+        return $this->permissions;
     }
 
     /**
@@ -69,43 +109,5 @@ class Group extends BaseGroup
     public function getUsers()
     {
         return $this->users;
-    }
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $permissions;
-
-    /**
-     * Add permissions
-     *
-     * @param \Enovance\UserBundle\Entity\Permission $permissions
-     * @return Group
-     */
-    public function addPermission(\Enovance\UserBundle\Entity\Permission $permissions)
-    {
-        $this->permissions[] = $permissions;
-    
-        return $this;
-    }
-
-    /**
-     * Remove permissions
-     *
-     * @param \Enovance\UserBundle\Entity\Permission $permissions
-     */
-    public function removePermission(\Enovance\UserBundle\Entity\Permission $permissions)
-    {
-        $this->permissions->removeElement($permissions);
-    }
-
-    /**
-     * Get permissions
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getPermissions()
-    {
-        return $this->permissions;
     }
 }
