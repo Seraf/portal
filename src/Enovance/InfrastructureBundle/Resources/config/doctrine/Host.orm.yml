@@ -1,6 +1,6 @@
 Enovance\InfrastructureBundle\Entity\Host:
     type: entity
-    table: Hosts
+    table: infrastructure_hosts
     repositoryClass: Enovance\InfrastructureBundle\Entity\HostRepository
     indexes:
         name_index:

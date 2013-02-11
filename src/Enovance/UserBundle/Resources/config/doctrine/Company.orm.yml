@@ -36,7 +36,7 @@ Enovance\UserBundle\Entity\Company:
              targetEntity: Enovance\InfrastructureBundle\Entity\Host
              inversedBy: companies
              joinTable:
-                 name: host_company
+                 name: infrastructure_hosts_companies
                  joinColumns:
                      company_id:
                          referencedColumnName: id
