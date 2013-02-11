@@ -1,0 +1,8 @@
+
+#numeter-content, #sidebar {
+  background-color: white;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 8px;
+  min-height: 90%;
+}
