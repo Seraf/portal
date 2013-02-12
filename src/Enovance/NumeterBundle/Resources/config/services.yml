@@ -6,7 +6,6 @@ parameters:
 #        arguments: [@service_id, "plain_value", %parameter%]
 services:
     enovance_numeter.configure_menu_listener:
-#        class: Enovance\NumeterBundle\EventListener\ConfigureMenuListener
         class: %enovance_numeter.configure_menu_listener%
         tags:
           - { name: kernel.event_listener, event: enovance_portal.menu_configure, method: onMenuConfigure }

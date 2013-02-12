@@ -6,3 +6,6 @@ enovance_portal_dashboard_default:
     pattern:  /
     defaults: { _controller: EnovancePortalBundle:Dashboard:index }
 
+enovance_portal_admin_index:
+    pattern:  /admin
+    defaults: { _controller: EnovancePortalBundle:Admin:index }

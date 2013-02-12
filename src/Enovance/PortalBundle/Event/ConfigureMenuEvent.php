@@ -9,7 +9,8 @@ use Symfony\Component\EventDispatcher\Event;
 
 class ConfigureMenuEvent extends Event
 {
-    const CONFIGURE = 'enovance_portal.menu_configure';
+    const CONFIGUREMENU = 'enovance_portal.menu_configure';
+    const CONFIGUREADMIN = 'enovance_portal.admin_menu_configure';
 
     private $factory;
     private $menu;

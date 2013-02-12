@@ -31,7 +31,7 @@ class Builder extends ContainerAware
         $menu = $factory->createItem('root');
 
         $item = $menu->addChild('Dashboard', array('route' => 'enovance_portal_dashboard_index'));
-        $this->container->get('event_dispatcher')->dispatch(ConfigureMenuEvent::CONFIGURE, new ConfigureMenuEvent($factory, $menu));
+        $this->container->get('event_dispatcher')->dispatch(ConfigureMenuEvent::CONFIGUREMENU, new ConfigureMenuEvent($factory, $menu));
 
         return $menu;
     }
@@ -43,6 +43,15 @@ class Builder extends ContainerAware
         $dropdown = $menu->addChild($user->getFirstname().' '.$user->getLastname());
         $dropdown->addChild('Profile', array('route' => 'fos_user_profile_show'));
         $dropdown->addChild('Logout', array('uri' => '/logout'));
+
+        return $menu;
+    }
+
+    public function AdminMenuNavbar(FactoryInterface $factory, array $options)
+    {
+        $menu = $factory->createItem('root');
+
+        $this->container->get('event_dispatcher')->dispatch(ConfigureMenuEvent::CONFIGUREADMIN, new ConfigureMenuEvent($factory, $menu));
 
         return $menu;
     }

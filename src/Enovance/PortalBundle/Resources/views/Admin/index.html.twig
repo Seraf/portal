@@ -1,0 +1,42 @@
+{% extends 'EnovancePortalBundle::base_layout.html.twig' %}
+
+{% block title %}Portal | Admin{% endblock %}
+
+{% block css %}
+<link href="{{ asset("bundles/enovanceportal/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block portal_layout %}
+<div class="span12" id="admin">
+    <div class="row-fluid" id="row-admin">
+        <div id="a-sidebar" class="span2">
+            <h2>Administration</h2>
+            {{ knp_menu_render('EnovancePortalBundle:Builder:AdminMenuNavbar', {}) }}
+        </div>
+        <div id="a-content" class="span10">
+            <div id="a-section-header">
+                <h2>Test</h2>
+                <form class="a-search">
+                    <input class="a-search" id="a-content-search" placeholder="Search" />
+                    <input class="a-search-button" value="Search" />
+                </form>
+            </div>
+            <div class="a-searchable">
+                <ul class="a-list a-sortable a-event ui-sortable">
+                    <li>
+                        <div class="a-avatar medium">
+                            <img src="/uploads/avatars/julien.jpg" alt="Julien" />
+                        </div>
+                        <a class="a-title a-edit-modal"><span class="list-title">Julien SYX</span></a>
+                        <span class="a-meta a-email">julien.syx@enovance.com</span>
+                        <span class="a-meta a-actions">
+                            <a href="/admin/user/66/edit" class="a-edit a-edit-modal" title="Edit">Edit</a>
+                        </span>
+                        <div class="a-alert-overlay hide"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
