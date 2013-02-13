@@ -22,10 +22,26 @@
     background-repeat: repeat;
     background-color: #000000;
     height: 100%;
+    width: 15%;
+}
+
+#a-sidebar h2 {
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #CACACA;
+    margin: 10px 0px 0px 0px;
+    color: #FFFFFF;
 }
 
 #a-content {
     margin-left: 0px;
+    width: 85%;
+}
+
+#admin-content {
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 #a-section-header {
@@ -38,16 +54,17 @@
     -webkit-border-radius: 0 4px 0 0;
     background: #F3F3F3;
     border-bottom: 1px solid #CACACA;
+    min-height: 60px;
 }
 
 #a-section-header h2 {
     margin: 0px 0px 0px 0px;
 }
 
-a-search {
+.a-search {
     float:right;
     padding:0 20px 0 0;
-    position:relative
+    position:relative;
 }
 
 .a-search .a-search {
@@ -64,7 +81,7 @@ a-search {
     border:1px solid #BEBEBE;
     font-size:13px;
     padding:6px 25px 7px 9px;
-    outline:none
+    outline:none;
 }
 
 .a-search .a-search-button {
@@ -75,8 +92,8 @@ a-search {
     width:11px;
     height:14px;
     right:30px;
-    top:21px;
+    top:24px;
     border:0;
     cursor:pointer;
-    line-height:20px
+    line-height:20px;
 }
