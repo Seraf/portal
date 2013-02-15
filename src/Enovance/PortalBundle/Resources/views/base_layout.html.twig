@@ -4,13 +4,15 @@
         <meta charset="utf-8" />
         <title>{% block title %}{% endblock title %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block css %}
         <link href="{{ asset("/bundles/braincraftedbootstrap/css/bootstrap.css") }}" rel="stylesheet" type="text/css" />
 <!--        <link href="{{ asset("/bundles/braincraftedbootstrap/css/bootstrap-responsive.css") }}" rel="stylesheet" type="text/css" /> -->
         <link href="{{ asset("/css/global.css") }}" rel="stylesheet" type="text/css" />
-        {% block css %}{% endblock css %}
+        {% endblock css %}
+        {% block javascript %}
         <script src="{{ asset("/bundles/braincraftedbootstrap/js/jquery-1.7.2.min.js") }}"></script>
         <script src="{{ asset("/bundles/braincraftedbootstrap/js/bootstrap.js") }}"></script>
-        {% block javascript %}{% endblock javascript %}    
+        {% endblock javascript %}    
     </head>
     <body>    
       <div class="container-fluid" id="container">

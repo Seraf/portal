@@ -3,7 +3,13 @@
 {% block title %}Portal | Admin{% endblock %}
 
 {% block css %}
-<link href="{{ asset("bundles/enovanceportal/css/admin.css") }}" rel="stylesheet" type="text/css" />
+    {{ parent() }}
+    <link href="{{ asset("bundles/enovanceportal/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset("bundles/enovanceportal/js/admin-menu.js") }}"></script>
 {% endblock %}
 
 {% block portal_layout %}
