@@ -148,6 +148,15 @@
     color: #FFFFFF;
 }
 
+#a-sidebar > ul > .submenu > ul > .active {
+    box-shadow:inset 0 1px 2px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
+    -webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);
+    background:url('/bundles/enovanceportal/images/admin-subnav-active.png');
+    border-top-color:#333
+}
+
+
 .submenu > span {
     margin-left: 5px;
 }
