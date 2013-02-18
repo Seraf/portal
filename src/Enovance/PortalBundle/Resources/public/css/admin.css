@@ -146,6 +146,7 @@
 #a-sidebar > ul > .submenu > ul > .active > a {
     background:url('/bundles/enovanceportal/images/admin-subnav-arrow.gif') right center no-repeat transparent;
     color: #FFFFFF;
+    font-weight: bold;
 }
 
 #a-sidebar > ul > .submenu > ul > .active {
