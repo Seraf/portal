@@ -1,0 +1,5 @@
+admin:
+    Users: Users
+    Groups: Groups
+    Companies: Companies
+    Permissions: Permissions

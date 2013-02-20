@@ -15,9 +15,9 @@ class AdminConfigureMenuListener
         $menu = $event->getMenu();
 
         $team = $menu->addChild('Team management', array('attributes' => array('class' => 'submenu')));
-        $team->addChild('Users', array('route' => 'enovance_admin_users'));
-        $team->addChild('Groups', array('route' => 'enovance_admin_groups'));
-        $team->addChild('Companies', array('route' => 'enovance_admin_companies'));
+        $team->addChild('admin.Users', array('route' => 'enovance_admin_users'))->setExtra('translation_domain', 'UserBundle');
+        $team->addChild('admin.Groups', array('route' => 'enovance_admin_groups'))->setExtra('translation_domain', 'UserBundle');
+        $team->addChild('admin.Companies', array('route' => 'enovance_admin_companies'))->setExtra('translation_domain', 'UserBundle');
     }
 }
 ?>

@@ -146,4 +146,33 @@ class User extends BaseUser
      * @var \Doctrine\Common\Collections\Collection
      */
     protected $groups;
+
+    /**
+     * @var string
+     */
+    private $language;
+
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     * @return User
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string 
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 }
