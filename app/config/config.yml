@@ -55,11 +55,13 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+    transport:  smtp
+    encryption: ssl
+    auth_mode:  login
+    host:       smtp.gmail.com
+    username:   enovanceportal
+    password:   enovance42
+    spool:      { type: memory }
 
 knp_menu:
     twig:  # use "twig: false" to disable the Twig extension and the TwigRenderer

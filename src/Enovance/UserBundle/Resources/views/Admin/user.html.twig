@@ -1,0 +1,50 @@
+{% extends 'EnovancePortalBundle:Admin:index.html.twig' %}
+{% import "EnovanceUserBundle:Form:macros.html.twig" as macros %}
+{% form_theme form 'EnovanceUserBundle:Form:adminFields.html.twig' %}
+
+{% block title %}Portal | Admin > User > {{ user.firstName }} {{ user.lastName }}{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% if user.id %}{% set isNew = FALSE %}{% else %}{% set isNew = TRUE %}{% endif %}
+
+{% block admin_section_header %}
+<!--  <h2 class="a-count">{% if isNew %}{% trans %}New User{% endtrans %}{% else %}{% trans %}Edit User{% endtrans %}{% endif %}</h2> -->
+{% endblock %}
+
+{% block admin_content %}
+  <form action="{% if isNew %}{{ path('enovance_admin_user_new') }}{% else %}{{ path('enovance_admin_user_edit', {'id': user.id}) }}{% endif %}" class="a-fishbone" method="post" {{ form_enctype(form) }}>{{ form_widget(form._token) }}
+    <div class="a-message form-header">{% trans %}General{% endtrans %}</div>
+      {{ form_row(form.username) }}
+      {{ form_row(form.firstname) }}
+      {{ form_row(form.lastname) }}
+      {{ form_row(form.email) }}
+      {% if form.enabled is defined %}
+        {{ form_row(form.enabled) }}
+      {% endif %}
+    <div class="a-field">
+      <label>{% trans %}Avatar{% endtrans %}</label>
+      <div class="a-text">
+        <img src="{{ asset(user.getAvatarWebPath ) }}" alt="avatar-{{ user.firstName }}-{{ user.lastName }}" />
+        {{ form_widget(form.file) }}
+      </div>
+      <span class="a-error">{{ form_errors(form.file) }}</span>
+    </div>
+  
+    {% if form.password is defined %}
+      <div class="a-message form-header">{% trans %}Password{% endtrans %}</div>
+        {% if isNew %}
+          {{ form_row(form.password.first) }}
+          {{ form_row(form.password.second) }}
+        {% else %}
+          {{ form_row(form.password.first) }}
+          {{ form_row(form.password.second) }}
+        {% endif %}
+      </div>
+    {% endif %}
+  {{ macros.submit(isNew, 'enovance_admin_users') }}
+</form>
+{% endblock %}

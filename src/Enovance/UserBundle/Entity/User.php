@@ -3,6 +3,8 @@
 namespace Enovance\UserBundle\Entity;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * User
@@ -13,6 +15,11 @@ class User extends BaseUser
      * @var integer
      */
     protected $id;
+
+    /**
+     * @Assert\File(maxSize="6000000")
+     */
+    public $file;
 
     /**
      * @var string
@@ -33,7 +40,6 @@ class User extends BaseUser
      * @var \Enovance\UserBundle\Entity\Company
      */
     private $company;
-
 
     public function __construct()
     {
@@ -147,32 +153,95 @@ class User extends BaseUser
      */
     protected $groups;
 
+
+
     /**
-     * @var string
+     * @ORM\Column(name="avatar", type="string", length=64, nullable=true)
      */
-    private $language;
-
+    private $avatar;
 
     /**
-     * Set language
+     * Set avatar
      *
-     * @param string $language
-     * @return User
+     * @param string $avatar
      */
-    public function setLanguage($language)
+    public function setAvatar($avatar)
     {
-        $this->language = $language;
-    
-        return $this;
+        $this->avatar = $avatar;
     }
 
     /**
-     * Get language
+     * Get avatar
      *
      * @return string 
      */
-    public function getLanguage()
+    public function getAvatar()
     {
-        return $this->language;
+        return $this->avatar ? $this->avatar : 'unknown_user.png';
+    }
+
+    public function getAbsoluteAvatarPath()
+    {
+        return null === $this->avatar ? null : $this->getAvatarRootDir() . '/' . $this->avatar;
+    }
+
+    public function getAvatarWebPath()
+    {
+        return $this->getAvatarDir() . '/' . $this->getAvatar();
+    }
+
+    protected function getAvatarRootDir()
+    {
+        // the absolute directory path where uploaded documents should be saved
+	return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    protected function getAvatarDir()
+    {
+        // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
+        return 'uploads/avatars';
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+        if (NULL !== $this->file && $this->avatar === NULL)
+            $this->avatar = uniqid() . '.' . $this->file->guessExtension();
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function uploadAvatar()
+    {
+        if (null === $this->file)
+            return;
+
+        $this->file->move($this->getAvatarRootDir(), $this->avatar);
+
+        unset($this->file);
+    }
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function storeFilenameForRemove()
+    {
+        $this->filenameForRemove = $this->getAbsoluteAvatarPath();
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($this->filenameForRemove)
+        {
+            unlink($this->filenameForRemove);
+        }
     }
 }

@@ -1,0 +1,32 @@
+{% macro input(type, label, field, helper) %}
+<div class="a-field">
+  <label>{{ label|trans }}</label>
+  <div class="a-{{ type }}{% if(field.vars.errors|length) %} a-error{% endif %}">{{ form_widget(field) }}</div>
+  <span class="field-helper"> {{ helper|trans }}</span>
+  <span class="a-error">{{ form_errors(field) }}</span>
+</div>
+{% endmacro %}
+
+{% macro submit(isNew, cancelPath) %}
+<div class="a-modal-bottom">
+  <div class="a-modal-actions">
+    <input class="a-button" type="submit" value="{% if isNew %}{% trans %}Create{% endtrans %}{% else %}{% trans %}Update{% endtrans %}{% endif %}"/>
+    <span class="cancel-action">
+      <span class="a-separator">or</span>
+      <a href="{{ path(cancelPath) }}">Cancel</a>
+    </span>
+  </div>
+</div>
+{% endmacro %}
+
+{% macro input_checkbox(label, field) %}
+<div class="a-field">
+  <label>{{ label|trans }}</label>
+  <div class="a-switch{% if field.vars.errors|length %} a-error{% endif %}">
+    <label class="a-on{% if field.vars.checked %} a-active{% endif %}">{% trans %}Yes{% endtrans %}</label>
+    <label class="a-off{% if not field.vars.checked %} a-active{% endif %}">{% trans %}No{% endtrans %}</label>
+    {{ form_widget(field) }}
+  </div>
+  <span class="a-error">{{ form_errors(field) }}</span>
+</div>
+{% endmacro %}

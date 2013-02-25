@@ -14,13 +14,13 @@ Enovance\UserBundle\Entity\User:
         lastname:
             type: string
             length: '150'
-        language:
-            type: string
-            length: '2'
-            default: "en"
         phone:
             type: string
             length: '20'
+            nullable: TRUE
+        avatar:
+            type: string
+            lenght: '64'
             nullable: TRUE
     manyToOne:
         company:

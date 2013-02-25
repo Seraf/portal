@@ -28,7 +28,8 @@
         "braincrafted/bootstrap-bundle": "dev-master",
         "friendsofsymfony/jsrouting-bundle": "dev-master",
 	"knplabs/knp-paginator-bundle": "dev-master",
-	"bcc/cron-manager-bundle": "dev-master"
+	"bcc/cron-manager-bundle": "dev-master",
+        "genemu/form-bundle": "2.1.*"
     },
     "scripts": {
         "post-install-cmd": [
