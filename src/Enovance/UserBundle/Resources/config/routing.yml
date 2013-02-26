@@ -16,15 +16,15 @@ enovance_admin_users:
     defaults: { _controller: EnovanceUserBundle:Admin:users }
 
 enovance_admin_user_new:
-    pattern: /{_locale}/admin/user/new
+    pattern: /{_locale}/admin/users/new
     defaults:  { _controller: EnovanceUserBundle:Admin:newUser }
 
 enovance_admin_user_edit:
-    pattern: /{_locale}/admin/user/{id}/edit
+    pattern: /{_locale}/admin/users/edit/{id}
     defaults:  { _controller: EnovanceUserBundle:Admin:editUser }
 
 enovance_admin_user_delete:
-    pattern: /{_locale}/admin/user/{id}/delete
+    pattern: /{_locale}/admin/users/delete/{id}
     defaults:  { _controller: EnovanceUserBundle:Admin:deleteUser }
 
 

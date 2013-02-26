@@ -5,3 +5,9 @@ services:
 #    enovance_portal.example:
 #        class: %enovance_portal.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    enovance.portal.menu.voter.request:
+        class: Enovance\PortalBundle\Menu\RequestVoter
+        arguments:
+            - @service_container
+        tags:
+            - { name: knp_menu.voter }
