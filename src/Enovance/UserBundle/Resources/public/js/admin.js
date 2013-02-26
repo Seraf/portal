@@ -17,10 +17,8 @@ $(document).ready(function() {
     
     $(this).hide();
     
-    var password_div = $(this).parent().parent();
-    password_div.find('input[type=password]').val(generated_password);
-    var password_confirm_div = password_div.next();
-    password_confirm_div.find('input[type=password]').val(generated_password);
+    $('#enovance_userbundle_adminusertype_password_first').val(generated_password);
+    $('#enovance_userbundle_adminusertype_password_second').val(generated_password);
   });
   
   function generatePassword() {

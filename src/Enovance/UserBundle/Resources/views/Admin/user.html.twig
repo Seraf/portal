@@ -46,9 +46,11 @@
       <div class="a-message form-header">{% trans %}Password{% endtrans %}</div>
         {% if isNew %}
           {{ form_row(form.password.first) }}
+        <div><span class="generate-password-btn"><a href="javascript:void(0);">{% trans %}generate{% endtrans %}</a> <span class="generate-password-value"></span></span></div>
           {{ form_row(form.password.second) }}
         {% else %}
           {{ form_row(form.password.first) }}
+        <div><span class="generate-password-btn"><a href="javascript:void(0);">{% trans %}generate{% endtrans %}</a> <span class="generate-password-value"></span></span></div>
           {{ form_row(form.password.second) }}
         {% endif %}
     {% endif %}

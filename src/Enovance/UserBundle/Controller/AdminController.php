@@ -90,6 +90,9 @@ class AdminController extends Controller
                     $password = $encoder->encodePassword($user->getPassword(), $user->getSalt());
                     $user->setPassword($password);
                 }
+                if (!$form["enabled"]->getData()) {
+		    $user->setEnabled(1);
+		}
 		$em->persist($user);
                 $em->flush();
 
