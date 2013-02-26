@@ -18,6 +18,10 @@ body {
     position: relative;
     height: 100%;
     padding-top: 65px;
+    padding-bottom: 25px;
+    border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .navbar .brand {

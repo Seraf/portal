@@ -15,15 +15,17 @@
         {% endblock javascript %}    
     </head>
     <body>    
+      {% if is_granted("IS_AUTHENTICATED_FULLY") %}  
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <a class="brand" href="">Enovance Portal</a>
+              {{ knp_menu_render('EnovancePortalBundle:Builder:MenuNavbar', {'nav_type': 'navbar'}) }}
+              {{ knp_menu_render('EnovancePortalBundle:Builder:SessionNavbar', {'nav_type': 'navbar', 'pull': 'right'}) }}
+          </div>
+        </div>
+      {% endif %}
       <div class="container-fluid" id="container">
         {% if is_granted("IS_AUTHENTICATED_FULLY") %}  
-          <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="navbar-inner">
-              <a class="brand" href="">Enovance Portal</a>
-                {{ knp_menu_render('EnovancePortalBundle:Builder:MenuNavbar', {'nav_type': 'navbar'}) }}
-                {{ knp_menu_render('EnovancePortalBundle:Builder:SessionNavbar', {'nav_type': 'navbar', 'pull': 'right'}) }}
-            </div>
-          </div>
           <div class="row-fluid" id="content">
             {% block portal_layout %}
             {% endblock portal_layout %}
@@ -32,6 +34,6 @@
           {% block login_layout %}
           {% endblock login_layout %}
         {% endif %}
-        </div>    
+      </div>    
     </body>
 </html>

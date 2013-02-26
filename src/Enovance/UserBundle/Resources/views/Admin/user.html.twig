@@ -1,5 +1,4 @@
 {% extends 'EnovancePortalBundle:Admin:index.html.twig' %}
-{% import "EnovanceUserBundle:Form:macros.html.twig" as macros %}
 {% form_theme form 'EnovanceUserBundle:Form:adminFields.html.twig' %}
 
 {% block title %}Portal | Admin > User > {{ user.firstName }} {{ user.lastName }}{% endblock %}
@@ -9,10 +8,15 @@
     <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset("bundles/enovanceuser/js/admin.js") }}"></script>
+{% endblock %}
+
 {% if user.id %}{% set isNew = FALSE %}{% else %}{% set isNew = TRUE %}{% endif %}
 
 {% block admin_section_header %}
-<!--  <h2 class="a-count">{% if isNew %}{% trans %}New User{% endtrans %}{% else %}{% trans %}Edit User{% endtrans %}{% endif %}</h2> -->
+  <h2 class="a-count">{% if isNew %}{% trans %}New User{% endtrans %}{% else %}{% trans %}Edit User{% endtrans %}{% endif %}</h2>
 {% endblock %}
 
 {% block admin_content %}
@@ -22,17 +26,21 @@
       {{ form_row(form.firstname) }}
       {{ form_row(form.lastname) }}
       {{ form_row(form.email) }}
-      {% if form.enabled is defined %}
-        {{ form_row(form.enabled) }}
+      {% if(user.id != app.user.id) %}
+        {% if form.enabled is defined %}
+          <div class="a-field">
+            {{ form_row(form.enabled) }}
+          </div>
+        {% endif %}
       {% endif %}
-    <div class="a-field">
-      <label>{% trans %}Avatar{% endtrans %}</label>
-      <div class="a-text">
-        <img src="{{ asset(user.getAvatarWebPath ) }}" alt="avatar-{{ user.firstName }}-{{ user.lastName }}" />
-        {{ form_widget(form.file) }}
+      <div class="a-field">
+        <label>{% trans %}Avatar{% endtrans %}</label>
+        <div class="a-text">
+          <img src="{{ asset(user.getAvatarWebPath ) }}" alt="avatar-{{ user.firstName }}-{{ user.lastName }}" />
+          {{ form_widget(form.file) }}
+        </div>
+        <span class="a-error">{{ form_errors(form.file) }}</span>
       </div>
-      <span class="a-error">{{ form_errors(form.file) }}</span>
-    </div>
   
     {% if form.password is defined %}
       <div class="a-message form-header">{% trans %}Password{% endtrans %}</div>
@@ -43,8 +51,7 @@
           {{ form_row(form.password.first) }}
           {{ form_row(form.password.second) }}
         {% endif %}
-      </div>
     {% endif %}
-  {{ macros.submit(isNew, 'enovance_admin_users') }}
-</form>
+    <input type="submit" />
+  </form>
 {% endblock %}

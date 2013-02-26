@@ -29,7 +29,7 @@ class AdminUserType extends AbstractType
             ->add('file', 'file', array('label' => 'Avatar', 'required' => FALSE))
         ;
         if (!$this->isNew) {
-            $builder->add('enabled', 'checkbox', array('label' => 'Is active', 'required' => FALSE));
+            $builder->add('enabled', 'checkbox', array('label' => 'Enabled', 'required' => FALSE));
         }
     }
 

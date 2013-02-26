@@ -100,7 +100,7 @@ class AdminController extends Controller
                     ->setContentType('text/html')
                     ->setBody($this->renderView('EnovanceUserBundle:Email:updatedUser.html.twig', array('user' => $user)));
 
-                $this->get('mailer')->send($message);
+                //$this->get('mailer')->send($message);
                 //$this->get('session')->setFlash('notice', $tr->trans('User has been updated'));
             }
         }
