@@ -2,6 +2,25 @@
 
 {% block title %}Portal | Admin > Companies{% endblock %}
 
+{% block css %}
+    {{ parent() }}
+    <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% macro li_company(company) %}
+<li>
+  <a class="a-title a-edit-modal"><span class="list-title">{{ company.name }}</span></a>
+  <span class="a-meta a-actions">
+    <a href="{{ path('enovance_admin_company_edit', {'id': company.id}) }}" class="a-edit a-edit-modal" title="{% trans %}Edit{% endtrans %}">{% trans %}Edit{% endtrans %}</a>
+    <a href="{{ path('enovance_admin_company_delete', {'id': company.id}) }}" class="a-delete" title="{% trans %}Delete{% endtrans %}" onclick="return confirm('{% trans %}This company will be deleted. Are you sure ?{% endtrans %}')">{% trans %}Delete{% endtrans %}</a>
+  </span>
+  <div class="a-alert-overlay hide"></div>
+</li>
+{% endmacro %}
+
 {% block admin_content %}
-les entreprises
+  <ul class="a-list a-sortable a-event ui-sortable">
+    {% for company in companies %}{{ _self.li_company(company) }}{% endfor %}
+  </ul>
+  <div class="navigation">{{ knp_pagination_render(companies) }}</div>
 {% endblock %}

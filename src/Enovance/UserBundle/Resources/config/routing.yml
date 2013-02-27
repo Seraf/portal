@@ -16,15 +16,15 @@ enovance_admin_users:
     defaults: { _controller: EnovanceUserBundle:Admin:users }
 
 enovance_admin_user_new:
-    pattern: /{_locale}/admin/users/new
+    pattern: /{_locale}/admin/users/user/new
     defaults:  { _controller: EnovanceUserBundle:Admin:newUser }
 
 enovance_admin_user_edit:
-    pattern: /{_locale}/admin/users/edit/{id}
+    pattern: /{_locale}/admin/users/user/{id}/edit
     defaults:  { _controller: EnovanceUserBundle:Admin:editUser }
 
 enovance_admin_user_delete:
-    pattern: /{_locale}/admin/users/delete/{id}
+    pattern: /{_locale}/admin/users/user/{id}/delete
     defaults:  { _controller: EnovanceUserBundle:Admin:deleteUser }
 
 
@@ -32,6 +32,30 @@ enovance_admin_groups:
     pattern:  /{_locale}/admin/groups
     defaults: { _controller: EnovanceUserBundle:Admin:groups }
 
+enovance_admin_group_new:
+    pattern: /{_locale}/admin/groups/group/new
+    defaults:  { _controller: EnovanceUserBundle:Admin:newGroup }
+
+enovance_admin_group_edit:
+    pattern: /{_locale}/admin/groups/group/{id}/edit
+    defaults:  { _controller: EnovanceUserBundle:Admin:editGroup }
+
+enovance_admin_group_delete:
+    pattern: /{_locale}/admin/groups/group/{id}/delete
+    defaults:  { _controller: EnovanceUserBundle:Admin:deleteGroup }
+
 enovance_admin_companies:
     pattern:  /{_locale}/admin/companies
     defaults: { _controller: EnovanceUserBundle:Admin:companies }
+
+enovance_admin_company_new:
+    pattern: /{_locale}/admin/companies/company/new
+    defaults:  { _controller: EnovanceUserBundle:Admin:newCompany }
+
+enovance_admin_company_edit:
+    pattern: /{_locale}/admin/companies/company/{id}/edit
+    defaults:  { _controller: EnovanceUserBundle:Admin:editCompany }
+
+enovance_admin_company_delete:
+    pattern: /{_locale}/admin/companies/company/{id}/delete
+    defaults:  { _controller: EnovanceUserBundle:Admin:deleteCompany }

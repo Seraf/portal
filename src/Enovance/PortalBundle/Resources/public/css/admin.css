@@ -2,7 +2,6 @@
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    height: 100%;
     min-height: 100%;
     background-color: #FFFFFF;
 }
@@ -41,10 +40,8 @@
     width: 85%;
 }
 
-#admin-content {
-/*    padding-left: 10px;
-    padding-top: 10px;
-*/
+#admin-content ul{
+    margin: 0 0 0 0;
 }
 
 #a-section-header {
@@ -128,6 +125,7 @@
     color: #a3a3a3;
     text-shadow: 0 1px 0 #000;
 }
+
 
 #a-sidebar ul > li > a:hover {
     background: none;

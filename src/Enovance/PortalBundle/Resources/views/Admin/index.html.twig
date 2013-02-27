@@ -23,11 +23,11 @@
         <div id="a-content" class="span10">
             <div id="a-section-header">
                 {% block admin_section_header %}
-                {% endblock %}
                 <form class="a-search">
                     <input class="a-search" id="a-content-search" placeholder="Search" />
                     <input class="a-search-button" value="Search" />
                 </form>
+                {% endblock %}
             </div>
             <div class="a-searchable" id="admin-content">
                 {% block admin_content %}

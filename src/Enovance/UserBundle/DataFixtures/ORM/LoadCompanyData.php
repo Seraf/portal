@@ -33,10 +33,27 @@ class LoadCompanyData extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($company);
         $manager->flush();
 
-        $company2 = new Company(1);
-        $hosts = $company2->getHosts();
-        foreach($hosts as $key=>$object)
-            echo $object->getName();
+        $company1 = new Company();
+        $company1->setName('Company1');
+        $company1->addUser($this->getReference('user-user1'));
+        $company1->addHost($host1);
+        $manager->persist($company1);
+        $manager->flush();
+
+        $company2 = new Company();
+        $company2->setName('Company2');
+        $company2->addUser($this->getReference('user-user2'));
+        $company2->addHost($host2);
+        $manager->persist($company2);
+        $manager->flush();
+
+        $company3 = new Company();
+        $company3->setName('Company3');
+        $company3->addUser($this->getReference('user-user3'));
+        $company3->addHost($host3);
+        $manager->persist($company1);
+        $manager->flush();
+
     }
 
     /**

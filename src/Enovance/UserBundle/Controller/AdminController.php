@@ -143,13 +143,29 @@ class AdminController extends Controller
 
     public function groupsAction()
     {
-        return $this->render('EnovanceUserBundle:Admin:groups.html.twig', array());
+        $query = $this->getDoctrine()->getRepository('EnovanceUserBundle:Group')->createQueryBuilder('g')
+            ->select('g')
+            ->orderBy('g.name')
+            ->getQuery();
+
+        $paginator = $this->get('knp_paginator');
+        $groups = $paginator->paginate($query, $this->get('request')->query->get('page', 1), 10);
+
+        return $this->render('EnovanceUserBundle:Admin:groups.html.twig', array('groups' => $groups));
     }
 
     public function companiesAction()
     {
-        return $this->render('EnovanceUserBundle:Admin:companies.html.twig', array());
-    }
-}
+        $query = $this->getDoctrine()->getRepository('EnovanceUserBundle:Company')->createQueryBuilder('c')
+            ->select('c')
+            ->orderBy('c.name')
+            ->getQuery();
 
+        $paginator = $this->get('knp_paginator');
+        $companies = $paginator->paginate($query, $this->get('request')->query->get('page', 1), 10);
+
+        return $this->render('EnovanceUserBundle:Admin:companies.html.twig', array('companies' => $companies));
+    }
+
+}
 

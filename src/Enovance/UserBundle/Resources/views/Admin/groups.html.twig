@@ -2,6 +2,25 @@
 
 {% block title %}Portal | Admin > Groups{% endblock %}
 
+{% block css %}
+    {{ parent() }}
+    <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% macro li_group(group) %}
+<li>
+  <a class="a-title a-edit-modal"><span class="list-title">{{ group.name }}</span></a>
+  <span class="a-meta a-actions">
+    <a href="{{ path('enovance_admin_group_edit', {'id': group.id}) }}" class="a-edit a-edit-modal" title="{% trans %}Edit{% endtrans %}">{% trans %}Edit{% endtrans %}</a>
+    <a href="{{ path('enovance_admin_group_delete', {'id': group.id}) }}" class="a-delete" title="{% trans %}Delete{% endtrans %}" onclick="return confirm('{% trans %}This group will be deleted. Are you sure ?{% endtrans %}')">{% trans %}Delete{% endtrans %}</a>
+  </span>
+  <div class="a-alert-overlay hide"></div>
+</li>
+{% endmacro %}
+
 {% block admin_content %}
-les groupes
+  <ul class="a-list a-sortable a-event ui-sortable">
+    {% for group in groups %}{{ _self.li_group(group) }}{% endfor %}
+  </ul>
+  <div class="navigation">{{ knp_pagination_render(groups) }}</div>
 {% endblock %}
