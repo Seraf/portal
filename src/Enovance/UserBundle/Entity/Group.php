@@ -110,4 +110,10 @@ class Group extends BaseGroup
     {
         return $this->users;
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
 }

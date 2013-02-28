@@ -4,6 +4,7 @@ namespace Enovance\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Enovance\UserBundle\Form\AdminUserType;
+use Enovance\UserBundle\Entity\User;
 
 class AdminController extends Controller
 {
@@ -25,7 +26,7 @@ class AdminController extends Controller
         $request = $this->get('request');
         $tr = $this->get('translator');
         $user = new User();
-        $userGroup = $this->getDoctrine()->getRepository('EnovanceUserBundle:Group')->findOneBy(array('role' => 'ROLE_USER'));
+        $userGroup = $this->getDoctrine()->getRepository('EnovanceUserBundle:Group')->findOneBy(array('roles' => 'ROLE_USER'));
 
         $form = $this->createForm(new AdminUserType($user), $user);
 

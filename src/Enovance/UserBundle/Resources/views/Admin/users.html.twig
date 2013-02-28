@@ -7,6 +7,13 @@
     <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
+{% block admin_section_header %}
+  <h2 class="a-count">{{ users|length }} {% trans %}Users{% endtrans %}</h2>
+  <a href="{{ path('enovance_admin_user_new') }}" class="a-button a-small" id="a-add-modal">{% trans %}Add User{% endtrans %}</a>
+  {{ parent() }}
+{% endblock %}
+
+
 {% macro li_user(user) %}
 <li>
   <div class="a-avatar medium"><img src="{{ asset(user.getAvatarWebPath) }}" alt="avatar-{{ user.firstName }}-{{ user.lastName }}" /></div>

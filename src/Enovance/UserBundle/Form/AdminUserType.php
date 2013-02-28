@@ -5,6 +5,7 @@ namespace Enovance\UserBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Doctrine\ORM\EntityRepository;
 
 class AdminUserType extends AbstractType
 {
@@ -27,6 +28,14 @@ class AdminUserType extends AbstractType
                   'first_options'  => array('label' => $passwordLabel,'required' => $this->isNew),
                   'second_options' => array('label' => 'Repeat Password','required' => $this->isNew)))
             ->add('file', 'file', array('label' => 'Avatar', 'required' => FALSE))
+            ->add('groups', 'entity', array(
+                  'label' => 'Groups',
+                  'class' => 'EnovanceUserBundle:Group',
+                  'query_builder' => function(EntityRepository $er) {
+                      return $er->createQueryBuilder('g');
+                  },
+                  'multiple' => TRUE,
+                  'expanded' => TRUE))
         ;
         if (!$this->isNew) {
             $builder->add('enabled', 'checkbox', array('label' => 'Enabled', 'required' => FALSE));

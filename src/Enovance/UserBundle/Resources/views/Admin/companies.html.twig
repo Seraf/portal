@@ -7,6 +7,13 @@
     <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
+{% block admin_section_header %}
+  <h2 class="a-count">{{ companies|length }} {% trans %}Companies{% endtrans %}</h2>
+  <a href="{{ path('enovance_admin_company_new') }}" class="a-button a-small" id="a-add-modal">{% trans %}Add Company{% endtrans %}</a>
+  {{ parent() }}
+{% endblock %}
+
+
 {% macro li_company(company) %}
 <li>
   <a class="a-title a-edit-modal"><span class="list-title">{{ company.name }}</span></a>

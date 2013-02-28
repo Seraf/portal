@@ -7,6 +7,13 @@
     <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
+{% block admin_section_header %}
+  <h2 class="a-count">{{ groups|length }} {% trans %}Groups{% endtrans %}</h2>
+  <a href="{{ path('enovance_admin_group_new') }}" class="a-button a-small" id="a-add-modal">{% trans %}Add Group{% endtrans %}</a>
+  {{ parent() }}
+{% endblock %}
+
+
 {% macro li_group(group) %}
 <li>
   <a class="a-title a-edit-modal"><span class="list-title">{{ group.name }}</span></a>

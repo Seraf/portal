@@ -45,9 +45,9 @@ body .a-list .a-actions .a-is-default{background:url(../images/meta-icons.png) #
 body .a-list .a-actions .a-usage{background:url(../images/clocks.png) 0 0 no-repeat;padding:0 0 0 25px;float:left;font-style:italic;font-weight:bold}
 body .a-list .a-actions .a-balance{font-weight:bold}
 body .a-list .a-actions .a-balance span{color:#92c74f;display:inline;float:none}
-body .a-list .a-actions .a-edit{transition:all 300ms ease;-moz-transition:all 300ms ease;-webkit-transition:all 300ms ease;text-indent:-10000px;overflow:hidden!important;background:url('/bundles/enovanceportal/images/gear.png') 0 0 no-repeat;float:right;width:18px;height:17px;margin:0 0 0 10px;opacity:.5}
+body .a-list .a-actions .a-edit{transition:all 300ms ease;-moz-transition:all 300ms ease;-webkit-transition:all 300ms ease;text-indent:-10000px;overflow:hidden!important;background:url('/bundles/enovanceportal/images/icons/gear.png') 0 0 no-repeat;float:right;width:18px;height:17px;margin:0 0 0 10px;opacity:.5}
 body .a-list .a-actions .a-edit:hover{opacity:1}
-body .a-list .a-actions .a-delete{transition:all 300ms ease;-moz-transition:all 300ms ease;-webkit-transition:all 300ms ease;text-indent:-10000px;overflow:hidden!important;background:url('/bundles/enovanceportal/images/remove.png') 0 0 no-repeat;float:right;width:18px;height:17px;margin:0 0 0 10px;opacity:.5}
+body .a-list .a-actions .a-delete{transition:all 300ms ease;-moz-transition:all 300ms ease;-webkit-transition:all 300ms ease;text-indent:-10000px;overflow:hidden!important;background:url('/bundles/enovanceportal/images/icons/remove.png') 0 0 no-repeat;float:right;width:18px;height:17px;margin:0 0 0 10px;opacity:.5}
 body .a-list .a-actions .a-delete:hover{opacity:1}
 body .a-list .a-actions .a-sort{float:left}
 body .a-list .a-actions .a-sort div{zoom:1;border-radius:4px 4px 4px 4px;-moz-border-radius:4px 4px 4px 4px;-webkit-border-radius:4px 4px 4px 4px;transition:background 100ms ease;-moz-transition:background 100ms ease;-webkit-transition:background 100ms ease;border:1px solid transparent;background:transparent;padding:3px;float:left;margin:-7px 0 0 0}
@@ -174,3 +174,12 @@ form.a-fishbone .a-buttons .a-progress{width:40px}
 .a-switch label{cursor:pointer}
 .a-switch input{display:none}
 .a-special .a-off.a-active{background:#608bd2;border-color:#5073af;color:#FFF}
+
+body #a-section-header .a-button{background-image:url('/bundles/enovanceportal/images/icons/button-add.gif');background-repeat:no-repeat;background-position:10px 10px;padding-left:28px;margin-top:15px;float:left;margin-right:10px}
+body #a-section-header .a-refresh-button{background-image:url('/bundles/enovanceportal/images/icons/button-import.png')!important}
+body #a-section-header .a-cancel-button{background-image:url('/bundles/enovanceportal/images/icons/cancel16.png')!important}
+.a-button{font-family:"Helvetica Neue","Helvetica","Arial","Liberation Sans","FreeSans",sans-serif;border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;transition:"background-color" 300ms ease;-moz-transition:"background-color" 300ms ease;-webkit-transition:"background-color" 300ms ease;transition:"border-color" 300ms ease;-moz-transition:"border-color" 300ms ease;-webkit-transition:"border-color" 300ms ease;box-shadow:0 0 1px #fff;-moz-box-shadow:0 0 1px #fff;-webkit-box-shadow:0 0 1px #fff;background-color:#567AA9;border:1px solid #222222;cursor:pointer;color:#FFF!important;font-size:13px;font-weight:bold;padding:10px 20px 11px;overflow:visible}
+.a-button:hover{background-color:#48C;border-color:#222222;text-decoration:none;}
+.a-button-disabled{border-radius:5px 5px 5px 5px;-moz-border-radius:5px 5px 5px 5px;-webkit-border-radius:5px 5px 5px 5px;transition:"background-color" 300ms ease;-moz-transition:"background-color" 300ms ease;-webkit-transition:"background-color" 300ms ease;transition:"border-color" 300ms ease;-moz-transition:"border-color" 300ms ease;-webkit-transition:"border-color" 300ms ease;box-shadow:0 0 1px #fff;-moz-box-shadow:0 0 1px #fff;-webkit-box-shadow:0 0 1px #fff;background-color:#cacaca;border:1px solid #555;color:#FFF!important;font-size:13px;font-weight:bold;padding:10px 20px 11px;overflow:visible}
+.a-button.a-small{padding:6px 15px 7px}
+.a-button-preview{float:right}
