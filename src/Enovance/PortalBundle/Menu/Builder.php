@@ -45,8 +45,7 @@ class Builder extends ContainerAware
         if ($this->container->get('security.context')->isGranted('ROLE_ADMIN')) {
 	    $dropdown->addChild('Admin', array('route' => 'enovance_portal_admin_index'));
         }
-        //$dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
-        $dropdown->addChild('Logout', array('uri' => '/logout'));
+        $dropdown->addChild('Logout', array('route' => 'fos_user_security_logout'));
 
         return $menu;
     }

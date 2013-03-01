@@ -49,11 +49,12 @@ security:
                 target_path_parameter: redirect_url
                 remember_me: false             
             logout:
-                path: /logout
+                path: fos_user_security_logout
                 target: root
             anonymous: false
 
     access_control:
         - { path: ^/(en|fr|de|es)/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/(en|fr|de|es)/logout$, role: ROLE_USER }
         - { path: ^/(en|fr|de|es)/password/reset, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/(en|fr|de|es)/admin/, role: ROLE_ADMIN }
