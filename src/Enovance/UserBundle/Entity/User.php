@@ -44,6 +44,8 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->groups = new ArrayCollection();
+        $this->salt = md5(uniqid(null, true));
     }
 
     /**
@@ -193,7 +195,7 @@ class User extends BaseUser
     protected function getAvatarRootDir()
     {
         // the absolute directory path where uploaded documents should be saved
-	return __DIR__.'/../../../../web/'.$this->getUploadDir();
+	return __DIR__.'/../../../../web/'.$this->getAvatarDir();
     }
 
     protected function getAvatarDir()

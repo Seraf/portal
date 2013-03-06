@@ -32,7 +32,7 @@ class AdminController extends Controller
 
         if ($request->getMethod() == 'POST')
         {
-            $form->bindRequest($request);
+            $form->bind($request);
 
             if ($form->isValid())
             {
@@ -41,7 +41,7 @@ class AdminController extends Controller
                 $password = $encoder->encodePassword($user->getPassword(), $user->getSalt());
                 $user->setPassword($password);
 
-                $em = $this->getDoctrine()->getEntityManager();
+                $em = $this->getDoctrine()->getManager();
                 $em->persist($user);
                 $em->flush();
 
@@ -69,7 +69,7 @@ class AdminController extends Controller
     public function editUserAction($id)
     {
         $request = $this->get('request');
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $tr = $this->get('translator');
         $user = $em->find('EnovanceUserBundle:User', $id);
 
@@ -80,7 +80,7 @@ class AdminController extends Controller
 
         if ($request->getMethod() == 'POST')
         {
-            $form->bindRequest($request);
+            $form->bind($request);
 
             if ($form->isValid())
             {
@@ -118,7 +118,7 @@ class AdminController extends Controller
     public function deleteUserAction($id)
     {
         $request = $this->get('request');
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $user = $em->find('EnovanceUserBundle:User', $id);
         $loggedUser = $this->get('security.context')->getToken()->getUser();
 
@@ -127,7 +127,7 @@ class AdminController extends Controller
 
         if ($user->getId() != $loggedUser->getId())
         {
-            $em = $this->getDoctrine()->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->remove($user);
             $em->flush();
 
