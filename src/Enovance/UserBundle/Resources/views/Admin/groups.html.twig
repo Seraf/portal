@@ -15,11 +15,14 @@
 
 
 {% macro li_group(group) %}
-<li>
+<li class="a-nophoto" rel="group">
   <a class="a-title a-edit-modal"><span class="list-title">{{ group.name }}</span></a>
+  <span class="a-meta">
+    {{ group.users|length }} {% trans %}Users{% endtrans %}
+  </span>
   <span class="a-meta a-actions">
     <a href="{{ path('enovance_admin_group_edit', {'id': group.id}) }}" class="a-edit a-edit-modal" title="{% trans %}Edit{% endtrans %}">{% trans %}Edit{% endtrans %}</a>
-    <a href="{{ path('enovance_admin_group_delete', {'id': group.id}) }}" class="a-delete" title="{% trans %}Delete{% endtrans %}" onclick="return confirm('{% trans %}This group will be deleted. Are you sure ?{% endtrans %}')">{% trans %}Delete{% endtrans %}</a>
+    {% if(group.deletable) %}<a href="{{ path('enovance_admin_group_delete', {'id': group.id}) }}" class="a-delete" title="{% trans %}Delete{% endtrans %}" onclick="return confirm('{% if(group.users|length or group.customers|length) %}{% trans %}This group is not empty and will be deleted. Are you sure ?{% endtrans %}{% else %}{% trans %}This group will be deleted. Are you sure ?{% endtrans %}{% endif %}')">{% trans %}Delete{% endtrans %}</a>{% endif %}
   </span>
   <div class="a-alert-overlay hide"></div>
 </li>

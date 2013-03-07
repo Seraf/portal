@@ -26,6 +26,11 @@ class Group extends BaseGroup
     private $users;
 
     /**
+     * @ORM\Column(name="deletable", type="boolean")
+     */
+    private $deletable;
+
+    /**
      * Constructor
      */
     public function __construct($name, $roles=array())
@@ -33,6 +38,7 @@ class Group extends BaseGroup
         parent::__construct($name, $roles);
         $this->permissions = new \Doctrine\Common\Collections\ArrayCollection();
         $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->deletable = TRUE;
     }
     
     /**
@@ -114,6 +120,26 @@ class Group extends BaseGroup
     public function __toString()
     {
         return $this->name;
+    }
+
+    /**
+     * Set deletable
+     *
+     * @param boolean $deletable
+     */
+    public function setDeletable($deletable)
+    {
+        $this->deletable = $deletable;
+    }
+
+    /**
+     * Get deletable
+     *
+     * @return boolean 
+     */
+    public function getDeletable()
+    {
+        return $this->deletable;
     }
 
 }

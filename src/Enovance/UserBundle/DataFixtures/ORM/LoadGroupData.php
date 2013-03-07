@@ -14,6 +14,7 @@ class LoadGroupData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $group1 = new Group('Admin');
+        $group1->setDeletable(False);
         $group1->addUser($this->getReference('admin-user'));
         $group1->addUser($this->getReference('admin-user2'));
         $group1->addRole('ROLE_ADMIN');

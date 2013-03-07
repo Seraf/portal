@@ -15,7 +15,7 @@
 
 
 {% macro li_company(company) %}
-<li>
+<li class="a-nophoto" rel="company">
   <a class="a-title a-edit-modal"><span class="list-title">{{ company.name }}</span></a>
   <span class="a-meta a-actions">
     <a href="{{ path('enovance_admin_company_edit', {'id': company.id}) }}" class="a-edit a-edit-modal" title="{% trans %}Edit{% endtrans %}">{% trans %}Edit{% endtrans %}</a>

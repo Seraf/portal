@@ -1,0 +1,28 @@
+{% extends 'EnovancePortalBundle:Admin:index.html.twig' %}
+{% form_theme form 'EnovanceUserBundle:Form:adminFields.html.twig' %}
+
+{% block title %}Portal | Admin > Group > {{ group.name }}{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset("bundles/enovanceuser/js/admin.js") }}"></script>
+{% endblock %}
+
+{% if group.id %}{% set isNew = FALSE %}{% else %}{% set isNew = TRUE %}{% endif %}
+
+{% block admin_section_header %}
+  <h2 class="a-count">{% if isNew %}{% trans %}New Group{% endtrans %}{% else %}{% trans %}Edit Group{% endtrans %}{% endif %}</h2>
+{% endblock %}
+
+{% block admin_content %}
+  <form action="{% if isNew %}{{ path('enovance_admin_group_new') }}{% else %}{{ path('enovance_admin_group_edit', {'id': group.id}) }}{% endif %}" class="a-fishbone" method="post" {{ form_enctype(form) }}>{{ form_widget(form._token) }}
+      {{ form_row(form.name) }}
+      {% if form.permissions is defined %}{{ form_row(form.permissions) }}{% endif %}
+      <input type="submit" />
+  </form>
+{% endblock %}

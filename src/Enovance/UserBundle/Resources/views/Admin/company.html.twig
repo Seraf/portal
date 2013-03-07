@@ -1,0 +1,27 @@
+{% extends 'EnovancePortalBundle:Admin:index.html.twig' %}
+{% form_theme form 'EnovanceUserBundle:Form:adminFields.html.twig' %}
+
+{% block title %}Portal | Admin > Company > {{ company.name }}{% endblock %}
+
+{% block css %}
+    {{ parent() }}
+    <link href="{{ asset("bundles/enovanceuser/css/admin.css") }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset("bundles/enovanceuser/js/admin.js") }}"></script>
+{% endblock %}
+
+{% if company.id %}{% set isNew = FALSE %}{% else %}{% set isNew = TRUE %}{% endif %}
+
+{% block admin_section_header %}
+  <h2 class="a-count">{% if isNew %}{% trans %}New Company{% endtrans %}{% else %}{% trans %}Edit Company{% endtrans %}{% endif %}</h2>
+{% endblock %}
+
+{% block admin_content %}
+  <form action="{% if isNew %}{{ path('enovance_admin_company_new') }}{% else %}{{ path('enovance_admin_company_edit', {'id': company.id}) }}{% endif %}" class="a-fishbone" method="post" {{ form_enctype(form) }}>{{ form_widget(form._token) }}
+      {{ form_row(form.name) }}
+      <input type="submit" />
+  </form>
+{% endblock %}

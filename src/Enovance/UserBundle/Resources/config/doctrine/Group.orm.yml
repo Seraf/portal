@@ -8,6 +8,8 @@ Enovance\UserBundle\Entity\Group:
             id: true
             generator:
                 strategy: AUTO
+        deletable:
+            type: boolean
     manyToMany:
          permissions:
              targetEntity: Enovance\UserBundle\Entity\Permission

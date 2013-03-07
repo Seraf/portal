@@ -5,9 +5,37 @@ namespace Enovance\UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Enovance\UserBundle\Form\AdminUserType;
 use Enovance\UserBundle\Entity\User;
+use Enovance\UserBundle\Form\AdminGroupType;
+use Enovance\UserBundle\Entity\Group;
+use Enovance\UserBundle\Form\AdminCompanyType;
+use Enovance\UserBundle\Entity\Company;
 
 class AdminController extends Controller
 {
+
+    private function saveObject($form, $em, $object)
+    {
+        $request = $this->get('request');
+        if ($request->getMethod() == 'POST')
+        {
+            $form->bind($request);
+
+            if ($form->isValid())
+            {
+                $em->persist($object);
+                $em->flush();
+
+                return $object;
+            }
+        }
+
+        return FALSE;
+    }
+/*
+ *  Users
+ */
+
+
     public function usersAction()
     {
         $query = $this->getDoctrine()->getRepository('EnovanceUserBundle:User')->createQueryBuilder('u')
@@ -142,6 +170,13 @@ class AdminController extends Controller
         return $this->redirect($this->generateUrl('enovance_admin_users'));
     }
 
+
+/*
+ *  Groups
+ */
+
+
+
     public function groupsAction()
     {
         $query = $this->getDoctrine()->getRepository('EnovanceUserBundle:Group')->createQueryBuilder('g')
@@ -154,6 +189,83 @@ class AdminController extends Controller
 
         return $this->render('EnovanceUserBundle:Admin:groups.html.twig', array('groups' => $groups));
     }
+
+
+    public function newGroupAction()
+    {
+        $group = new Group();
+        $em = $this->getDoctrine()->getManager();
+        $tr = $this->get('translator');
+        $form = $this->createForm(new AdminGroupType($group), $group);
+
+        $result = $this->saveObject($form, $em, $group);
+        if ($result)
+        {
+            $this->get('session')->setFlash('notice', $tr->trans('New group has been added'));
+            return $this->redirect($this->generateUrl('admin_admin_groups'));
+        }
+
+        return $this->render('EnovanceUserBundle:Admin:group.html.twig', array(
+              'group' => $group,
+              'form' => $form->createView(),
+            ));
+    }
+
+    public function editGroupAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $tr = $this->get('translator');
+        $group = $em->find('EnovanceUserBundle:Group', $id);
+
+        if (!$group)
+            throw new NoResultException();
+
+        $form = $this->createForm(new AdminGroupType($group), $group);
+
+        $result = $this->saveObject($form, $em, $group);
+        if ($result)
+            $this->get('session')->setFlash('notice', $tr->trans('Group has been updated'));
+
+        return $this->render('EnovanceUserBundle:Admin:group.html.twig', array(
+              'group' => $group,
+              'form' => $form->createView(),
+            ));
+    }
+
+    public function deleteGroupAction($id)
+    {
+        $group = $this->getDoctrine()->getRepository('EnovanceUserBundle:Group')->find($id);
+
+        if (!$group)
+            throw new NoResultException();
+
+        if ($group->getDeletable())
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($group);
+            $em->flush();
+
+            $message = $this->get('translator')->trans('Group has been deleted');
+        }
+        else
+        {
+            $message = $this->get('translator')->trans('This group can\'t be deleted');
+        }
+
+        $this->get('session')->setFlash('notice', $message);
+        return $this->redirect($this->generateUrl('enovance_admin_groups'));
+    }
+
+
+/*
+ *  Companies
+ */
+
+
+
+
+
+
 
     public function companiesAction()
     {
@@ -168,5 +280,61 @@ class AdminController extends Controller
         return $this->render('EnovanceUserBundle:Admin:companies.html.twig', array('companies' => $companies));
     }
 
-}
 
+public function newCompanyAction()
+    {
+        $company = new Company();
+        $em = $this->getDoctrine()->getManager();
+        $tr = $this->get('translator');
+
+        $form = $this->createForm(new AdminCompanyType(), $company);
+
+        $result = $this->saveObject($form, $em, $company);
+        if ($result)
+        {
+            $this->get('session')->setFlash('notice', $tr->trans('New company has been added'));
+            return $this->redirect($this->generateUrl('enovance_admin_companies'));
+        }
+
+        return $this->render('EnovanceUserBundle:Admin:company.html.twig', array(
+              'company' => $company,
+              'form' => $form->createView(),
+            ));
+    }
+
+    public function editCompanyAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $company = $em->find('EnovanceUserBundle:Company', $id);
+
+        if (!$company)
+            throw new NoResultException();
+
+        $tr = $this->get('translator');
+        $form = $this->createForm(new AdminCompanyType(), $company);
+
+        $result = $this->saveObject($form, $em, $company);
+        if ($result)
+            $this->get('session')->setFlash('notice', $tr->trans('Company has been updated'));
+
+        return $this->render('EnovanceUserBundle:Admin:company.html.twig', array(
+              'company' => $company,
+              'form' => $form->createView(),
+            ));
+    }
+
+    public function deleteCompanyAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $company = $em->find('EnovanceUserBundle:Company', $id);
+
+        $em->remove($company);
+        $em->flush();
+
+        $message = $this->get('translator')->trans('Company has been deleted');
+
+        $this->get('session')->setFlash('notice', $message);
+        return $this->redirect($this->generateUrl('enovance_admin_companies'));
+    }
+
+}
